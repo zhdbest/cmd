@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>命令库</title>
+    <link>https://zhdbest.github.io/cmd/</link>
+    <description>Recent content on 命令库</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 22 Aug 2021 17:41:14 +0800</lastBuildDate><atom:link href="https://zhdbest.github.io/cmd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用命令</title>
+      <link>https://zhdbest.github.io/cmd/docker/common/</link>
+      <pubDate>Sun, 22 Aug 2021 17:41:14 +0800</pubDate>
+      
+      <guid>https://zhdbest.github.io/cmd/docker/common/</guid>
+      <description># 查看docker版本 docker -v # 查看所有已下载镜像 docker images </description>
+    </item>
+    
+  </channel>
+</rss>

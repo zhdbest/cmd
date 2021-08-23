@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.87.0" />
+    <meta name="description" content="常用的命令">
+<meta name="author" content="hongmao">
+
+    <link rel="icon" href="/cmd/images/cmd-line.svg" type="image/svg+xml">
+
+    <title>Tags :: 命令库</title>
+
+    
+    <link href="/cmd/css/nucleus.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/fontawesome-all.min.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/hybrid.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/featherlight.min.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/perfect-scrollbar.min.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/auto-complete.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/atom-one-dark-reasonable.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/theme.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/tabs.css?1629731049" rel="stylesheet">
+    <link href="/cmd/css/hugo-theme.css?1629731049" rel="stylesheet">
+    
+    
+
+    <script src="/cmd/js/jquery-3.3.1.min.js?1629731049"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/cmd/tags/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+  <svg height="100%" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="50%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 1024 768">
+    <metadata>
+    <vectornator:setting key="DimensionsVisible" value="1"/>
+    <vectornator:setting key="PencilOnly" value="0"/>
+    <vectornator:setting key="SnapToPoints" value="0"/>
+    <vectornator:setting key="OutlineMode" value="0"/>
+    <vectornator:setting key="CMYKEnabledKey" value="0"/>
+    <vectornator:setting key="RulersVisible" value="1"/>
+    <vectornator:setting key="SnapToEdges" value="0"/>
+    <vectornator:setting key="GuidesVisible" value="1"/>
+    <vectornator:setting key="DisplayWhiteBackground" value="0"/>
+    <vectornator:setting key="doHistoryDisabled" value="0"/>
+    <vectornator:setting key="SnapToGuides" value="1"/>
+    <vectornator:setting key="TimeLapseWatermarkDisabled" value="0"/>
+    <vectornator:setting key="Units" value="Pixels"/>
+    <vectornator:setting key="DynamicGuides" value="0"/>
+    <vectornator:setting key="IsolateActiveLayer" value="0"/>
+    <vectornator:setting key="SnapToGrid" value="0"/>
+    </metadata>
+    <defs/>
+    <g id="图层 1" vectornator:layerName="图层 1">
+    <path d="M72.4697+48.0711L951.53+48.0711C973.848+48.0711+991.94+76.5073+991.94+111.585L991.94+656.415C991.94+691.493+973.848+719.929+951.53+719.929L72.4697+719.929C50.1522+719.929+32.0603+691.493+32.0603+656.415L32.0603+111.585C32.0603+76.5073+50.1522+48.0711+72.4697+48.0711Z" opacity="0.997114" fill="#a9a9a9"/>
+    <path d="M109.204+88.0148L914.796+88.0148C935.248+88.0148+951.828+113.07+951.828+143.977L951.828+624.023C951.828+654.93+935.248+679.985+914.796+679.985L109.204+679.985C88.7517+679.985+72.1718+654.93+72.1718+624.023L72.1718+143.977C72.1718+113.07+88.7517+88.0148+109.204+88.0148Z" opacity="0.997114" fill="#696969"/>
+    <g opacity="0.997114"/>
+    <g opacity="0.997114">
+    <path d="M251.55+385.856C236.824+391.357+223.621+394.108+211.941+394.108C196.537+394.108+182.361+389.982+169.412+381.73C156.462+373.478+146.391+361.206+139.197+344.914C132.003+328.621+128.406+310.192+128.406+289.625C128.406+269.228+131.96+250.905+139.07+234.655C146.179+218.405+156.209+206.09+169.158+197.711C182.107+189.332+196.368+185.143+211.941+185.143C223.621+185.143+236.824+187.894+251.55+193.395L251.55+216.754C237.924+208.883+224.382+204.948+210.925+204.948C200.769+204.948+191.48+208.418+183.059+215.358C174.638+222.298+167.846+232.475+162.683+245.89C157.52+259.305+154.939+273.883+154.939+289.625C154.939+305.622+157.605+320.39+162.937+333.932C168.269+347.474+175.082+357.609+183.376+364.337C191.671+371.066+200.854+374.43+210.925+374.43C224.298+374.43+237.839+370.495+251.55+362.624L251.55+385.856Z" opacity="0.997114" fill="#ececec"/>
+    <path d="M347.4+394.108C341.729+394.108+336.863+392.077+332.8+388.014C328.738+383.952+326.707+379.085+326.707+373.415C326.707+367.659+328.759+362.772+332.864+358.751C336.969+354.731+341.814+352.721+347.4+352.721C352.986+352.721+357.831+354.731+361.936+358.751C366.041+362.772+368.093+367.659+368.093+373.415C368.093+379.085+366.062+383.952+362+388.014C357.937+392.077+353.071+394.108+347.4+394.108ZM347.4+283.786C341.729+283.786+336.863+281.754+332.8+277.692C328.738+273.629+326.707+268.763+326.707+263.092C326.707+257.337+328.759+252.449+332.864+248.429C336.969+244.409+341.814+242.399+347.4+242.399C352.986+242.399+357.831+244.409+361.936+248.429C366.041+252.449+368.093+257.337+368.093+263.092C368.093+268.763+366.062+273.629+362+277.692C357.937+281.754+353.071+283.786+347.4+283.786Z" opacity="0.997114" fill="#ececec"/>
+    <path d="M554.207+394.108L429.666+185.27L452.136+185.27L577.439+394.108L554.207+394.108Z" opacity="0.997114" fill="#ececec"/>
+    </g>
+    </g>
+  </svg>    
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/cmd/js/lunr.min.js?1629731049"></script>
+<script type="text/javascript" src="/cmd/js/auto-complete.js?1629731049"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/zhdbest.github.io\/cmd\/";
+    
+</script>
+<script type="text/javascript" src="/cmd/js/search.js?1629731049"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/cmd/docker/" title="Docker" class="dd-item
+        
+        
+        
+        ">
+      <a href="/cmd/docker/">
+          <b>1. </b>Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/cmd/docker/common/" title="常用命令" class="dd-item ">
+        <a href="/cmd/docker/common/">
+        常用命令
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/cmd/'>命令库</a> > Tags
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+                tag ::
+              
+              Tags
+            </h1>
+          
+
+        
+
+
+
+
+
+<ul>
+	
+</ul>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+		
+			<a class="nav nav-next" href="/cmd/docker/" title="Docker" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/cmd/js/clipboard.min.js?1629731049"></script>
+    <script src="/cmd/js/perfect-scrollbar.min.js?1629731049"></script>
+    <script src="/cmd/js/perfect-scrollbar.jquery.min.js?1629731049"></script>
+    <script src="/cmd/js/jquery.sticky.js?1629731049"></script>
+    <script src="/cmd/js/featherlight.min.js?1629731049"></script>
+    <script src="/cmd/js/highlight.pack.js?1629731049"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/cmd/js/modernizr.custom-3.6.0.js?1629731049"></script>
+    <script src="/cmd/js/learn.js?1629731049"></script>
+    <script src="/cmd/js/hugo-learn.js?1629731049"></script>
+    
+    
+
+  </body>
+</html>
