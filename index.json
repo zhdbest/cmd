@@ -1,24 +1,94 @@
 [
 {
-	"uri": "https://hongmao.run/cmd/docker/common/",
+	"uri": "https://hongmao.run/cmd/redis/",
+	"title": "Redis",
+	"tags": [],
+	"description": "本章节主要讲述Redis的相关命令。",
+	"content": " Redis 本章节主要讲述Redis的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/redis/00-common/",
 	"title": "常用命令",
 	"tags": [],
-	"description": "",
-	"content": "# 查看docker版本 docker -v # 查看所有已下载镜像 docker images "
+	"description": "Redis的常用命令",
+	"content": ""
+},
+{
+	"uri": "https://hongmao.run/cmd/nodejs/",
+	"title": "NodeJs",
+	"tags": [],
+	"description": "本章节主要讲述NodeJs的相关命令。",
+	"content": " NodeJs 本章节主要讲述NodeJs的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/nodejs/00-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "NodeJs的常用命令",
+	"content": ""
+},
+{
+	"uri": "https://hongmao.run/cmd/linux/",
+	"title": "Linux",
+	"tags": [],
+	"description": "本章节主要讲述Linux的相关命令。",
+	"content": " Linux 本章节主要讲述Linux的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/linux/00-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "Linux的常用命令",
+	"content": ""
+},
+{
+	"uri": "https://hongmao.run/cmd/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "本章节主要讲述Hugo的相关命令。",
+	"content": " Hugo 本章节主要讲述Hugo的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/hugo/00-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "Hugo的常用命令",
+	"content": ""
+},
+{
+	"uri": "https://hongmao.run/cmd/git/",
+	"title": "Git",
+	"tags": [],
+	"description": "本章节主要讲述Git的相关命令。",
+	"content": " Git 本章节主要讲述Git的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/git/00-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "Git的常用命令",
+	"content": ""
 },
 {
 	"uri": "https://hongmao.run/cmd/docker/",
 	"title": "Docker",
 	"tags": [],
 	"description": "本章节主要讲述Docker的相关命令。",
-	"content": "章节 1 Docker 本章节主要讲述Docker的相关命令。\n"
+	"content": " Docker 本章节主要讲述Docker的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/docker/00-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "Docker的常用命令",
+	"content": ""
 },
 {
 	"uri": "https://hongmao.run/cmd/",
 	"title": "命令库",
 	"tags": [],
 	"description": "",
-	"content": "命令库 这儿主要放一些常用的命令。\n Docker  本章节主要讲述Docker的相关命令。\n "
+	"content": "命令库 这儿主要放一些常用的命令。\n Docker  本章节主要讲述Docker的相关命令。\n Git  本章节主要讲述Git的相关命令。\n Hugo  本章节主要讲述Hugo的相关命令。\n Linux  本章节主要讲述Linux的相关命令。\n NodeJs  本章节主要讲述NodeJs的相关命令。\n Redis  本章节主要讲述Redis的相关命令。\n "
 },
 {
 	"uri": "https://hongmao.run/cmd/categories/",
