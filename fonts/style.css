@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?6mtsyf');
-  src:  url('fonts/icomoon.eot?6mtsyf#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?6mtsyf') format('truetype'),
-    url('fonts/icomoon.woff?6mtsyf') format('woff'),
-    url('fonts/icomoon.svg?6mtsyf#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?qovqwg');
+  src:  url('fonts/icomoon.eot?qovqwg#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qovqwg') format('truetype'),
+    url('fonts/icomoon.woff?qovqwg') format('woff'),
+    url('fonts/icomoon.svg?qovqwg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Kafka:before {
+.icon-homebrew .path1:before {
+  content: "\e901";
+  color: ;
+}
+.icon-homebrew .path2:before {
+  content: "\e902";
+  margin-left: -0.6640625em;
+  color: ;
+}
+.icon-homebrew .path3:before {
+  content: "\e903";
+  margin-left: -0.6640625em;
+  color: ;
+}
+.icon-homebrew .path4:before {
+  content: "\e904";
+  margin-left: -0.6640625em;
+  color: ;
+}
+.icon-homebrew .path5:before {
+  content: "\e905";
+  margin-left: -0.6640625em;
+  color: none;
+}
+.icon-homebrew .path6:before {
+  content: "\e906";
+  margin-left: -0.6640625em;
+  color: ;
+}
+.icon-redis:before {
   content: "\e900";
 }

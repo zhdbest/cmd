@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://hongmao.run/cmd/homebrew/</loc>
+    <lastmod>2021-09-04T09:05:42+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/homebrew/00-common/</loc>
+    <lastmod>2021-09-04T09:05:42+08:00</lastmod>
+  </url><url>
     <loc>https://hongmao.run/cmd/redis/</loc>
     <lastmod>2021-09-02T23:29:26+08:00</lastmod>
   </url><url>
@@ -39,7 +45,7 @@
     <lastmod>2021-09-02T23:28:54+08:00</lastmod>
   </url><url>
     <loc>https://hongmao.run/cmd/</loc>
-    <lastmod>2021-09-02T23:29:26+08:00</lastmod>
+    <lastmod>2021-09-04T09:05:42+08:00</lastmod>
   </url><url>
     <loc>https://hongmao.run/cmd/categories/</loc>
   </url><url>

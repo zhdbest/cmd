@@ -1,5 +1,19 @@
 [
 {
+	"uri": "https://hongmao.run/cmd/homebrew/",
+	"title": "Homebrew",
+	"tags": [],
+	"description": "本章节主要讲述Homebrew的相关命令。",
+	"content": " Homebrew 本章节主要讲述Homebrew的相关命令。\n 常用命令   "
+},
+{
+	"uri": "https://hongmao.run/cmd/homebrew/00-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "Homebrew的常用命令",
+	"content": ""
+},
+{
 	"uri": "https://hongmao.run/cmd/redis/",
 	"title": "Redis",
 	"tags": [],
@@ -15,10 +29,10 @@
 },
 {
 	"uri": "https://hongmao.run/cmd/nodejs/",
-	"title": "NodeJs",
+	"title": "Node.Js",
 	"tags": [],
-	"description": "本章节主要讲述NodeJs的相关命令。",
-	"content": " NodeJs 本章节主要讲述NodeJs的相关命令。\n 常用命令   "
+	"description": "本章节主要讲述Node.Js的相关命令。",
+	"content": " Node.Js 本章节主要讲述NodeJs的相关命令。\n 常用命令   "
 },
 {
 	"uri": "https://hongmao.run/cmd/nodejs/00-common/",
@@ -88,7 +102,7 @@
 	"title": "命令库",
 	"tags": [],
 	"description": "",
-	"content": "命令库 这儿主要放一些常用的命令。\n Docker  本章节主要讲述Docker的相关命令。\n Git  本章节主要讲述Git的相关命令。\n Hugo  本章节主要讲述Hugo的相关命令。\n Linux  本章节主要讲述Linux的相关命令。\n NodeJs  本章节主要讲述NodeJs的相关命令。\n Redis  本章节主要讲述Redis的相关命令。\n "
+	"content": "命令库 这儿主要放一些常用的命令。\n Docker  本章节主要讲述Docker的相关命令。\n Git  本章节主要讲述Git的相关命令。\n Homebrew  本章节主要讲述Homebrew的相关命令。\n Hugo  本章节主要讲述Hugo的相关命令。\n Linux  本章节主要讲述Linux的相关命令。\n Node.Js  本章节主要讲述Node.Js的相关命令。\n Redis  本章节主要讲述Redis的相关命令。\n "
 },
 {
 	"uri": "https://hongmao.run/cmd/categories/",
