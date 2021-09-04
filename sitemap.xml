@@ -2,47 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hongmao.run/cmd/homebrew/</loc>
+    <loc>https://hongmao.run/cmd/homebrew/01-common/</loc>
     <lastmod>2021-09-04T09:05:42+08:00</lastmod>
   </url><url>
-    <loc>https://hongmao.run/cmd/homebrew/00-common/</loc>
-    <lastmod>2021-09-04T09:05:42+08:00</lastmod>
-  </url><url>
-    <loc>https://hongmao.run/cmd/redis/</loc>
+    <loc>https://hongmao.run/cmd/redis/01-common/</loc>
     <lastmod>2021-09-02T23:29:26+08:00</lastmod>
   </url><url>
-    <loc>https://hongmao.run/cmd/redis/00-common/</loc>
-    <lastmod>2021-09-02T23:29:26+08:00</lastmod>
-  </url><url>
-    <loc>https://hongmao.run/cmd/nodejs/</loc>
+    <loc>https://hongmao.run/cmd/nodejs/01-common/</loc>
     <lastmod>2021-09-02T23:29:20+08:00</lastmod>
   </url><url>
-    <loc>https://hongmao.run/cmd/nodejs/00-common/</loc>
-    <lastmod>2021-09-02T23:29:20+08:00</lastmod>
-  </url><url>
-    <loc>https://hongmao.run/cmd/linux/</loc>
+    <loc>https://hongmao.run/cmd/linux/01-common/</loc>
     <lastmod>2021-09-02T23:29:13+08:00</lastmod>
   </url><url>
-    <loc>https://hongmao.run/cmd/linux/00-common/</loc>
-    <lastmod>2021-09-02T23:29:13+08:00</lastmod>
-  </url><url>
-    <loc>https://hongmao.run/cmd/hugo/</loc>
+    <loc>https://hongmao.run/cmd/hugo/01-common/</loc>
     <lastmod>2021-09-02T23:29:08+08:00</lastmod>
   </url><url>
-    <loc>https://hongmao.run/cmd/hugo/00-common/</loc>
-    <lastmod>2021-09-02T23:29:08+08:00</lastmod>
-  </url><url>
-    <loc>https://hongmao.run/cmd/git/</loc>
-    <lastmod>2021-09-02T23:29:03+08:00</lastmod>
-  </url><url>
-    <loc>https://hongmao.run/cmd/git/00-common/</loc>
+    <loc>https://hongmao.run/cmd/git/01-common/</loc>
     <lastmod>2021-09-02T23:29:03+08:00</lastmod>
   </url><url>
     <loc>https://hongmao.run/cmd/docker/</loc>
     <lastmod>2021-09-02T23:28:54+08:00</lastmod>
   </url><url>
-    <loc>https://hongmao.run/cmd/docker/00-common/</loc>
+    <loc>https://hongmao.run/cmd/docker/01-common/</loc>
     <lastmod>2021-09-02T23:28:54+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/nodejs/02-npm/</loc>
+    <lastmod>2021-09-02T23:29:20+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/git/</loc>
+    <lastmod>2021-09-02T23:29:03+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/homebrew/</loc>
+    <lastmod>2021-09-04T09:05:42+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/hugo/</loc>
+    <lastmod>2021-09-02T23:29:08+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/linux/</loc>
+    <lastmod>2021-09-02T23:29:13+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/nodejs/</loc>
+    <lastmod>2021-09-02T23:29:20+08:00</lastmod>
+  </url><url>
+    <loc>https://hongmao.run/cmd/redis/</loc>
+    <lastmod>2021-09-02T23:29:26+08:00</lastmod>
   </url><url>
     <loc>https://hongmao.run/cmd/</loc>
     <lastmod>2021-09-04T09:05:42+08:00</lastmod>

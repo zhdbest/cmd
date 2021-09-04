@@ -1,83 +1,41 @@
 [
 {
-	"uri": "https://hongmao.run/cmd/homebrew/",
-	"title": "Homebrew",
-	"tags": [],
-	"description": "本章节主要讲述Homebrew的相关命令。",
-	"content": " Homebrew 本章节主要讲述Homebrew的相关命令。\n 常用命令   "
-},
-{
-	"uri": "https://hongmao.run/cmd/homebrew/00-common/",
+	"uri": "https://hongmao.run/cmd/homebrew/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Homebrew的常用命令",
-	"content": ""
+	"content": "# 查看homebrew版本 brew -v # 查看帮助 brew help # 查看某命令的文档 brew help [COMMAND] # 例如： brew help search # 搜索软件包 brew search 文本 # 也可以简写： brew -S 文本 # 例如： brew search openjdk # 或 brew -S openjdk # 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的） brew info 包名 # 例如： brew info python # 安装软件包 brew install 包名 # 例如： brew install python # 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了） brew update # 查看过时的软件包 brew outdated # 升级指定包 brew upgrade 包名 # 例如： brew upgrade python # 卸载指定包 brew uninstall 包名 # 例如： brew uninstall python # 查看本地安装的所有软件包 brew list brew services # 查看使用brew安装的服务 brew services # 启动服务 brew services start 包名 # 例如： brew services start nginx # 停止服务 brew services stop 包名 # 例如： brew services stop nginx # 重启服务 brew services restart 包名 # 例如： brew services restart nginx # 清理已卸载的软件包的服务配置 brew services cleanup "
 },
 {
-	"uri": "https://hongmao.run/cmd/redis/",
-	"title": "Redis",
-	"tags": [],
-	"description": "本章节主要讲述Redis的相关命令。",
-	"content": " Redis 本章节主要讲述Redis的相关命令。\n 常用命令   "
-},
-{
-	"uri": "https://hongmao.run/cmd/redis/00-common/",
+	"uri": "https://hongmao.run/cmd/redis/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Redis的常用命令",
 	"content": ""
 },
 {
-	"uri": "https://hongmao.run/cmd/nodejs/",
-	"title": "Node.Js",
-	"tags": [],
-	"description": "本章节主要讲述Node.Js的相关命令。",
-	"content": " Node.Js 本章节主要讲述NodeJs的相关命令。\n 常用命令   "
-},
-{
-	"uri": "https://hongmao.run/cmd/nodejs/00-common/",
+	"uri": "https://hongmao.run/cmd/nodejs/01-common/",
 	"title": "常用命令",
 	"tags": [],
-	"description": "NodeJs的常用命令",
-	"content": ""
+	"description": "Node.Js的常用命令",
+	"content": "# 查看Node.js版本 node -v # 或 node --version # 查看帮助文档 node -h # 或 node --help "
 },
 {
-	"uri": "https://hongmao.run/cmd/linux/",
-	"title": "Linux",
-	"tags": [],
-	"description": "本章节主要讲述Linux的相关命令。",
-	"content": " Linux 本章节主要讲述Linux的相关命令。\n 常用命令   "
-},
-{
-	"uri": "https://hongmao.run/cmd/linux/00-common/",
+	"uri": "https://hongmao.run/cmd/linux/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Linux的常用命令",
 	"content": ""
 },
 {
-	"uri": "https://hongmao.run/cmd/hugo/",
-	"title": "Hugo",
-	"tags": [],
-	"description": "本章节主要讲述Hugo的相关命令。",
-	"content": " Hugo 本章节主要讲述Hugo的相关命令。\n 常用命令   "
-},
-{
-	"uri": "https://hongmao.run/cmd/hugo/00-common/",
+	"uri": "https://hongmao.run/cmd/hugo/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Hugo的常用命令",
-	"content": ""
+	"content": "# 查看Hugo版本 hugo version # 查看帮助文档 hugo help # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site \u0026#34;blog\u0026#34; # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir \u0026#34;myDir\u0026#34; # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D "
 },
 {
-	"uri": "https://hongmao.run/cmd/git/",
-	"title": "Git",
-	"tags": [],
-	"description": "本章节主要讲述Git的相关命令。",
-	"content": " Git 本章节主要讲述Git的相关命令。\n 常用命令   "
-},
-{
-	"uri": "https://hongmao.run/cmd/git/00-common/",
+	"uri": "https://hongmao.run/cmd/git/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Git的常用命令",
@@ -88,14 +46,63 @@
 	"title": "Docker",
 	"tags": [],
 	"description": "本章节主要讲述Docker的相关命令。",
-	"content": " Docker 本章节主要讲述Docker的相关命令。\n 常用命令   "
+	"content": "本章节主要讲述Docker的相关命令。\n 常用命令  Docker的常用命令\n "
 },
 {
-	"uri": "https://hongmao.run/cmd/docker/00-common/",
+	"uri": "https://hongmao.run/cmd/docker/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Docker的常用命令",
 	"content": ""
+},
+{
+	"uri": "https://hongmao.run/cmd/nodejs/02-npm/",
+	"title": "npm",
+	"tags": [],
+	"description": "npm的常用命令",
+	"content": "# 查看npm版本 npm -v # 查看帮助 npm # 或 npm help # 查看某个命令的帮助信息 npm help 命令 # 例如： npm help install 配置相关 # 查看npm配置信息 npm config ls -l # 查看npm某项配置的值 npm config get registry # 设置npm某项配置的值 npm config set registry https://registry.npm.taobao.org/ 包相关 # 搜索包，如果自己更换成了淘宝的源，则在查询时需指定如下源 npm search 包名 --registry=https://registry.npmjs.org/ # 例如： npm search hexo-cli --registry=https://registry.npmjs.org/ # 当前项目安装指定包 npm install 包名 # 例如： npm install hexo-cli # 如果想全局安装： npm install -g hexo-cli # 查看当前项目安装的包 npm list # 查看全局安装的包 npm list -g # 查看当前项目已安装的指定包的信息 npm list 包名 # 查看全局安装的加上-g，例如：查看全局安装的npm包相关信息 npm list -g npm # 卸载全局安装的指定包 npm uninstall -g 包名 # 例如： npm uninstall -g gitbook-cli # 查看全局安装的待更新的包 npm outdated -g # 更新全局安装的指定包 npm update -g 包名 # 例如： npm update -g npm # 更新所有全局安装的可更新的包 npm update -g "
+},
+{
+	"uri": "https://hongmao.run/cmd/git/",
+	"title": "Git",
+	"tags": [],
+	"description": "本章节主要讲述Git的相关命令。",
+	"content": "本章节主要讲述Git的相关命令。\n 常用命令  Git的常用命令\n "
+},
+{
+	"uri": "https://hongmao.run/cmd/homebrew/",
+	"title": "Homebrew",
+	"tags": [],
+	"description": "本章节主要讲述Homebrew的相关命令。",
+	"content": "本章节主要讲述Homebrew的相关命令。\n 常用命令  Homebrew的常用命令\n "
+},
+{
+	"uri": "https://hongmao.run/cmd/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "本章节主要讲述Hugo的相关命令。",
+	"content": "本章节主要讲述Hugo的相关命令。\n 常用命令  Hugo的常用命令\n "
+},
+{
+	"uri": "https://hongmao.run/cmd/linux/",
+	"title": "Linux",
+	"tags": [],
+	"description": "本章节主要讲述Linux的相关命令。",
+	"content": "本章节主要讲述Linux的相关命令。\n 常用命令  Linux的常用命令\n "
+},
+{
+	"uri": "https://hongmao.run/cmd/nodejs/",
+	"title": "Node.Js",
+	"tags": [],
+	"description": "本章节主要讲述Node.Js的相关命令。",
+	"content": "本章节主要讲述NodeJs的相关命令。\n 常用命令  Node.Js的常用命令\n npm  npm的常用命令\n "
+},
+{
+	"uri": "https://hongmao.run/cmd/redis/",
+	"title": "Redis",
+	"tags": [],
+	"description": "本章节主要讲述Redis的相关命令。",
+	"content": "本章节主要讲述Redis的相关命令。\n 常用命令  Redis的常用命令\n "
 },
 {
 	"uri": "https://hongmao.run/cmd/",
