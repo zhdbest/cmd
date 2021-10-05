@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.88.1" />
-    <meta name="description" content="Redis的常用命令">
+    <meta name="description" content="docker-compose的常用命令">
 <meta name="author" content="hongmao">
 
     <link rel="icon" href="/cmd/icon/cmd-line.svg" type="image/svg+xml">
 
-    <title>常用命令 :: 命令库</title>
+    <title>docker-compose :: 命令库</title>
 
     
     <link href="/cmd/css/nucleus.css?1633428013" rel="stylesheet">
@@ -37,7 +37,7 @@
 <link href="/cmd/fonts/style.css?1633428013" rel="stylesheet">
 <link href="/cmd/css/my.css?1633428013" rel="stylesheet">
   </head>
-  <body class="" data-url="/cmd/redis/01-common/">
+  <body class="" data-url="/cmd/docker/02-docker-compose/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -113,7 +113,7 @@
   
     
     <li data-nav-id="/cmd/docker/" title="Docker" class="dd-item
-        
+        parent
         
         
         ">
@@ -162,7 +162,7 @@
  
   
     
-      <li data-nav-id="/cmd/docker/02-docker-compose/" title="docker-compose" class="dd-item ">
+      <li data-nav-id="/cmd/docker/02-docker-compose/" title="docker-compose" class="dd-item active">
         <a href="/cmd/docker/02-docker-compose/">
         <b>2.</b> docker-compose
         <i class="fas fa-check read-icon"></i>
@@ -497,7 +497,7 @@
   
     
     <li data-nav-id="/cmd/redis/" title="Redis" class="dd-item
-        parent
+        
         
         
         ">
@@ -525,7 +525,7 @@
  
   
     
-      <li data-nav-id="/cmd/redis/01-common/" title="常用命令" class="dd-item active">
+      <li data-nav-id="/cmd/redis/01-common/" title="常用命令" class="dd-item ">
         <a href="/cmd/redis/01-common/">
         <b>1.</b> 常用命令
         <i class="fas fa-check read-icon"></i>
@@ -602,7 +602,7 @@
             
           
           
-            <a href='/cmd/'>命令库</a> > <a href='/cmd/redis/'>Redis</a> > 常用命令
+            <a href='/cmd/'>命令库</a> > <a href='/cmd/docker/'>Docker</a> > docker-compose
           
         
           
@@ -624,14 +624,137 @@
           
             <h1>
               
-              常用命令
+              docker-compose
             </h1>
           
 
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"></code></pre></div>
+<p>使用Docker定义和运行多容器应用程序。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看帮助信息</span>
+docker-compose --help
+<span style="color:#75715e"># 查看版本信息</span>
+docker-compose version
+</code></pre></div><h1 id="docker-composeyml">docker-compose.yml</h1>
+<p>Compose文件是定义服务、网络和卷的YAML文件。默认路径是<code>./docker-compose.yml</code>。</p>
+<p>使用Docker Compose来编排多个服务，但也可以仅“编排”一个服务，如下展示了仅启动Nginx服务的docker-compose.yml文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3.9&#34;</span>
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">myNginx</span>:  
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nginx</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#ae81ff">8080</span>:<span style="color:#ae81ff">80</span>
+</code></pre></div><h1 id="docker-compose操作">docker-compose操作</h1>
+<p>注：<code>docker-compose</code>相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用<code>-f Compose文件</code>来明确指定Compose文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 仅拉取镜像，并不创建容器</span>
+<span style="color:#75715e"># 拉取所有服务的镜像</span>
+docker-compose pull
+<span style="color:#75715e"># 拉取指定服务名的镜像</span>
+docker-compose pull myNginx
+
+<span style="color:#75715e"># 校验并查看Compose文件</span>
+docker-compose config
+<span style="color:#75715e"># 仅校验Compose文件不打印输出</span>
+docker-compose config -q
+
+<span style="color:#75715e"># 为服务构建、（重新）创建、启动和附加到容器</span>
+docker-compose up <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--scale SERVICE<span style="color:#f92672">=</span>NUM...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>SERVICE...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 常用参数如下：</span>
+<span style="color:#75715e"># -d  在后台运行容器</span>
+docker-compose up -d
+<span style="color:#75715e"># --force-recreate  即使容器的配置和映像没有更改，也要重新创建容器。</span>
+docker-compose up --force-recreate
+<span style="color:#75715e"># --no-recreate   如果容器已经存在，请不要重新创建它们。</span>
+docker-compose up --no-recreate
+<span style="color:#75715e"># --no-start  创建服务后不要启动它们。原命令docker-compose create已废弃改为使用：</span>
+docker-compose up --no-start
+<span style="color:#75715e"># --scale  指定某服务启动几个容器，将覆盖Compose文件中的scale设置</span>
+docker-compose up -d --scale myNginx<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+
+<span style="color:#75715e"># 查看允许中的容器</span>
+docker-compose ps
+<span style="color:#75715e"># 查看所有容器</span>
+docker-compose ps -a
+
+<span style="color:#75715e"># 启动服务的现有容器</span>
+docker-compose start <span style="color:#f92672">[</span>SERVICE...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 启动当前Compose文件下的所有容器：</span>
+docker-compose start
+<span style="color:#75715e"># 启动指定的服务myNginx：</span>
+docker-compose start myNginx
+
+<span style="color:#75715e"># 停止运行容器而不删除它们</span>
+docker-compose stop <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>SERVICE...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 例如，关闭当前Compose下的所有运行中的容器：</span>
+docker-compose stop
+<span style="color:#75715e"># 关闭指定的服务myNginx：</span>
+docker-compose stop myNginx
+
+<span style="color:#75715e"># 重新启动所有已停止以及正在运行的服务</span>
+docker-compose restart <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>SERVICE...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 注意：如果对docker-compose.yml配置进行了更改，运行此命令后并不会反映这些更改。</span>
+<span style="color:#75715e"># 重新启动当前Compose文件下的所有容器：</span>
+docker-compose restart
+<span style="color:#75715e"># 重新启动指定的服务myNginx：</span>
+docker-compose restart myNginx
+
+<span style="color:#75715e"># 对服务运行一次性命令。</span>
+docker-compose run <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-v VOLUME...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-p PORT...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-e KEY<span style="color:#f92672">=</span>VAL...<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-l KEY<span style="color:#f92672">=</span>VALUE...<span style="color:#f92672">]</span> SERVICE <span style="color:#f92672">[</span>COMMAND<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ARGS...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 常用的选项有：</span>
+<span style="color:#75715e"># -d  在后台运行容器</span>
+<span style="color:#75715e"># --name NAME  指定容器名</span>
+<span style="color:#75715e"># -e KEY=VAL  设置环境变量</span>
+<span style="color:#75715e"># --rm  运行后移除容器</span>
+<span style="color:#75715e"># -p  将容器的端口发布到主机，即绑定端口</span>
+<span style="color:#75715e"># -v  绑定装载卷</span>
+
+<span style="color:#75715e"># 在执行中的容器内执行命令</span>
+docker-compose exec <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>-e KEY<span style="color:#f92672">=</span>VAL...<span style="color:#f92672">]</span> SERVICE COMMAND <span style="color:#f92672">[</span>ARGS...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 例如，执行ls</span>
+docker-compose exec myNginx ls
+<span style="color:#75715e"># 等同于对该镜像执行：</span>
+docker exec fcfb5b4add13 ls
+
+<span style="color:#75715e"># 列出所创建容器使用的镜像</span>
+docker-compose images
+
+<span style="color:#75715e"># 显示服务的日志输出</span>
+docker-compose logs
+
+<span style="color:#75715e"># 暂停正在运行的服务容器</span>
+docker-compose pause
+
+<span style="color:#75715e"># 取消暂停已暂停服务的容器</span>
+docker-compose unpause
+
+<span style="color:#75715e"># 打印端口绑定的公共端口</span>
+docker-compose port <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> SERVICE PRIVATE_PORT
+<span style="color:#75715e"># 例如：</span>
+docker-compose port myNginx <span style="color:#ae81ff">80</span>
+0.0.0.0:8080
+
+<span style="color:#75715e"># 删除停止的服务容器</span>
+docker-compose rm <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>SERVICE...<span style="color:#f92672">]</span>
+<span style="color:#75715e"># 例如，删除当前Compose文件下的所有已停止的容器</span>
+docker-compose rm
+<span style="color:#75715e"># 删除当前Compose文件下指定的已停止的容器</span>
+docker-compose rm myNginx
+
+<span style="color:#75715e"># 显示正在运行的进程</span>
+docker-compose top
+
+<span style="color:#75715e"># 停止容器并删除由docker-compose up创建的容器、网络、卷和镜像。</span>
+docker-compose down
+</code></pre></div><blockquote>
+<p>参考资料</p>
+<ul>
+<li><a href="https://docs.docker.com/compose/gettingstarted/">Get started with Docker Compose | Docker Documentation</a></li>
+<li><a href="https://docs.docker.com/compose/compose-file/">Compose file | Docker Documentation</a></li>
+<li><a href="https://docs.docker.com/compose/reference/">Overview of docker-compose CLI | Docker Documentation</a></li>
+</ul>
+</blockquote>
+
 
 <footer class="footline">
 	
@@ -668,8 +791,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -683,6 +804,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -700,37 +824,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -750,6 +843,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -871,6 +967,38 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -895,7 +1023,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -908,7 +1035,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -933,10 +1059,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/cmd/redis/" title="Redis"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/cmd/docker/01-common/" title="常用命令"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/cmd/docker/" title="Docker" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/cmd/git/" title="Git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
