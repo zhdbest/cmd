@@ -29,5 +29,18 @@ version: &amp;#34;3.9&amp;#34; services: myNginx: image: nginx ports: - 8080:80 
 # 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2 # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a # 启动服务的现有容器 docker-compose start [SERVICE.</description>
     </item>
     
+    <item>
+      <title>Dockerfile操作</title>
+      <link>https://hongmao.run/cmd/docker/03-docker-file/</link>
+      <pubDate>Tue, 05 Oct 2021 10:56:54 +0800</pubDate>
+      
+      <guid>https://hongmao.run/cmd/docker/03-docker-file/</guid>
+      <description>参考hello-world的Dockerfile写了一个简单的类似的：
+Dockerfile：
+FROMubuntuCOPY hello.sh /CMD [&amp;#34;sh&amp;#34;, &amp;#34;/hello.sh&amp;#34;]hello.sh：
+echo &amp;#34;Hello, hongmao&amp;#34;  参考资料
+ Dockerfile reference | Docker Documentation   </description>
+    </item>
+    
   </channel>
 </rss>

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.89.1" />
-    <meta name="description" content="Hugo的常用命令">
+    <meta name="description" content="Dockerfile的编写及常用命令">
 <meta name="author" content="hongmao">
 
     <link rel="icon" href="/cmd/icon/cmd-line.svg" type="image/svg+xml">
 
-    <title>常用命令 :: 命令库</title>
+    <title>Dockerfile操作 :: 命令库</title>
 
     
     <link href="/cmd/css/nucleus.css?1636253254" rel="stylesheet">
@@ -37,7 +37,7 @@
 <link href="/cmd/fonts/style.css?1636253254" rel="stylesheet">
 <link href="/cmd/css/my.css?1636253254" rel="stylesheet">
   </head>
-  <body class="" data-url="/cmd/hugo/01-common/">
+  <body class="" data-url="/cmd/docker/03-docker-file/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -113,7 +113,7 @@
   
     
     <li data-nav-id="/cmd/docker/" title="Docker" class="dd-item
-        
+        parent
         
         
         ">
@@ -183,7 +183,7 @@
  
   
     
-      <li data-nav-id="/cmd/docker/03-docker-file/" title="Dockerfile操作" class="dd-item ">
+      <li data-nav-id="/cmd/docker/03-docker-file/" title="Dockerfile操作" class="dd-item active">
         <a href="/cmd/docker/03-docker-file/">
         <b>3.</b> Dockerfile操作
         <i class="fas fa-check read-icon"></i>
@@ -326,7 +326,7 @@
   
     
     <li data-nav-id="/cmd/hugo/" title="Hugo" class="dd-item
-        parent
+        
         
         
         ">
@@ -354,7 +354,7 @@
  
   
     
-      <li data-nav-id="/cmd/hugo/01-common/" title="常用命令" class="dd-item active">
+      <li data-nav-id="/cmd/hugo/01-common/" title="常用命令" class="dd-item ">
         <a href="/cmd/hugo/01-common/">
         <b>1.</b> 常用命令
         <i class="fas fa-check read-icon"></i>
@@ -644,7 +644,7 @@
             
           
           
-            <a href='/cmd/'>命令库</a> > <a href='/cmd/hugo/'>Hugo</a> > 常用命令
+            <a href='/cmd/'>命令库</a> > <a href='/cmd/docker/'>Docker</a> > Dockerfile操作
           
         
           
@@ -666,46 +666,27 @@
           
             <h1>
               
-              常用命令
+              Dockerfile操作
             </h1>
           
 
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看Hugo版本</span>
-hugo version
+<p>参考<a href="https://hub.docker.com/_/hello-world"><code>hello-world</code></a>的Dockerfile写了一个简单的类似的：</p>
+<p>Dockerfile：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> ubuntu</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> hello.sh /<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [<span style="color:#e6db74">&#34;sh&#34;</span>, <span style="color:#e6db74">&#34;/hello.sh&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>hello.sh：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">echo <span style="color:#e6db74">&#34;Hello, hongmao&#34;</span>
+</code></pre></div><blockquote>
+<p>参考资料</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference | Docker Documentation</a></li>
+</ul>
+</blockquote>
 
-<span style="color:#75715e"># 查看帮助文档</span>
-hugo help
-
-<span style="color:#75715e"># 创建一个Hugo站点项目</span>
-hugo new site 项目名
-<span style="color:#75715e"># 例如：</span>
-hugo new site <span style="color:#e6db74">&#34;blog&#34;</span>
-
-<span style="color:#75715e"># 创建一篇文章，默认路径是在项目根目录的content目录下</span>
-hugo new 文章路径及文章名
-<span style="color:#75715e"># 例如：在content目录下的posts目录下创建文章“first.md”</span>
-hugo new posts/first.md
-
-<span style="color:#75715e"># 依据模板创建文章或目录</span>
-hugo new --kind 模板名 文章路径及文章名
-<span style="color:#75715e"># 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件：</span>
-hugo new --kind dir <span style="color:#e6db74">&#34;myDir&#34;</span>
-
-<span style="color:#75715e"># 启动本地服务</span>
-hugo server
-<span style="color:#75715e"># 启动本地服务（包括状态为“草稿”的文章）</span>
-hugo server -D
-<span style="color:#75715e"># 指定主题启动</span>
-hugo server theme<span style="color:#f92672">=</span>your_theme_name
-
-<span style="color:#75715e"># 生成静态资源文件</span>
-hugo
-<span style="color:#75715e"># 生成静态资源文件（包括状态为“草稿”的文章）</span>
-hugo -D
-</code></pre></div>
 
 <footer class="footline">
 	
@@ -742,8 +723,6 @@ hugo -D
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -757,6 +736,9 @@ hugo -D
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -790,6 +772,42 @@ hugo -D
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -872,43 +890,6 @@ hugo -D
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1042,10 +1023,10 @@ hugo -D
 	 
 	 
 		
-			<a class="nav nav-prev" href="/cmd/hugo/" title="Hugo"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/cmd/docker/02-docker-compose/" title="docker-compose"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/cmd/linux/" title="Linux" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/cmd/git/" title="Git" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

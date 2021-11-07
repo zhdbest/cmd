@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.89.1" />
-    <meta name="description" content="Hugo的常用命令">
+    <meta name="description" content="yum常用命令">
 <meta name="author" content="hongmao">
 
     <link rel="icon" href="/cmd/icon/cmd-line.svg" type="image/svg+xml">
 
-    <title>常用命令 :: 命令库</title>
+    <title>yum :: 命令库</title>
 
     
     <link href="/cmd/css/nucleus.css?1636253254" rel="stylesheet">
@@ -37,7 +37,7 @@
 <link href="/cmd/fonts/style.css?1636253254" rel="stylesheet">
 <link href="/cmd/css/my.css?1636253254" rel="stylesheet">
   </head>
-  <body class="" data-url="/cmd/hugo/01-common/">
+  <body class="" data-url="/cmd/linux/02-yum/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -326,7 +326,7 @@
   
     
     <li data-nav-id="/cmd/hugo/" title="Hugo" class="dd-item
-        parent
+        
         
         
         ">
@@ -354,7 +354,7 @@
  
   
     
-      <li data-nav-id="/cmd/hugo/01-common/" title="常用命令" class="dd-item active">
+      <li data-nav-id="/cmd/hugo/01-common/" title="常用命令" class="dd-item ">
         <a href="/cmd/hugo/01-common/">
         <b>1.</b> 常用命令
         <i class="fas fa-check read-icon"></i>
@@ -383,7 +383,7 @@
   
     
     <li data-nav-id="/cmd/linux/" title="Linux" class="dd-item
-        
+        parent
         
         
         ">
@@ -432,7 +432,7 @@
  
   
     
-      <li data-nav-id="/cmd/linux/02-yum/" title="yum" class="dd-item ">
+      <li data-nav-id="/cmd/linux/02-yum/" title="yum" class="dd-item active">
         <a href="/cmd/linux/02-yum/">
         <b>2. </b>yum
         <i class="fas fa-check read-icon"></i>
@@ -644,7 +644,7 @@
             
           
           
-            <a href='/cmd/'>命令库</a> > <a href='/cmd/hugo/'>Hugo</a> > 常用命令
+            <a href='/cmd/'>命令库</a> > <a href='/cmd/linux/'>Linux</a> > yum
           
         
           
@@ -666,45 +666,81 @@
           
             <h1>
               
-              常用命令
+              yum
             </h1>
           
 
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看Hugo版本</span>
-hugo version
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看帮助信息</span>
+yum help
 
-<span style="color:#75715e"># 查看帮助文档</span>
-hugo help
+<span style="color:#75715e"># 查看已配置的源</span>
+yum repolist
 
-<span style="color:#75715e"># 创建一个Hugo站点项目</span>
-hugo new site 项目名
+<span style="color:#75715e"># 检查是否有可用的软件包更新</span>
+check-update
+
+<span style="color:#75715e"># 在软件包名及详细信息中搜索指定字符串</span>
+yum search &lt;str&gt;
 <span style="color:#75715e"># 例如：</span>
-hugo new site <span style="color:#e6db74">&#34;blog&#34;</span>
+yum search nginx
+<span style="color:#75715e"># 若想扩大搜索范围，不止在名称和简介中搜索，可以使用：</span>
+yum search all nginx
 
-<span style="color:#75715e"># 创建一篇文章，默认路径是在项目根目录的content目录下</span>
-hugo new 文章路径及文章名
-<span style="color:#75715e"># 例如：在content目录下的posts目录下创建文章“first.md”</span>
-hugo new posts/first.md
+<span style="color:#75715e"># 列出所有软件包（会按已安装的和可安装的进行区分）</span>
+yum list
+<span style="color:#75715e"># 列出指定软件包</span>
+yum list &lt;package-name&gt;
+<span style="color:#75715e"># 例如:</span>
+yum list nginx
+<span style="color:#75715e"># 也可以同时查询多个，例如：</span>
+yum list docker nginx
+<span style="color:#75715e"># 列出已安装的软件包</span>
+yum list installed
+<span style="color:#75715e"># 列出已安装的包名包含指定字符串的包</span>
+yum list installed | grep &lt;string&gt;
+<span style="color:#75715e"># 例如：</span>
+yum list installed | grep docker
 
-<span style="color:#75715e"># 依据模板创建文章或目录</span>
-hugo new --kind 模板名 文章路径及文章名
-<span style="color:#75715e"># 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件：</span>
-hugo new --kind dir <span style="color:#e6db74">&#34;myDir&#34;</span>
+<span style="color:#75715e"># 查看软件包的详细信息</span>
+yum info &lt;package-name&gt;
+<span style="color:#75715e"># 例如：</span>
+yum info docker
 
-<span style="color:#75715e"># 启动本地服务</span>
-hugo server
-<span style="color:#75715e"># 启动本地服务（包括状态为“草稿”的文章）</span>
-hugo server -D
-<span style="color:#75715e"># 指定主题启动</span>
-hugo server theme<span style="color:#f92672">=</span>your_theme_name
+<span style="color:#75715e"># 向系统中安装一个或多个软件包</span>
+yum install &lt;package-1&gt; &lt;package-2&gt;
+<span style="color:#75715e"># 例如：</span>
+sudo yum install docker-ce docker-ce-cli containerd.io
 
-<span style="color:#75715e"># 生成静态资源文件</span>
-hugo
-<span style="color:#75715e"># 生成静态资源文件（包括状态为“草稿”的文章）</span>
-hugo -D
+<span style="color:#75715e"># 更新系统中的一个或多个软件包</span>
+sudo yum update
+<span style="color:#75715e"># yum update是更新所有可更新的软件包，如果只想更新nginx，可以使用如下命令</span>
+sudo yum update nginx
+
+<span style="color:#75715e"># 卸载软件包</span>
+sudo yum remove &lt;package-name&gt;
+<span style="color:#75715e"># 例如：</span>
+sudo yum remove docker
+</code></pre></div><h1 id="yum-utils">yum-utils</h1>
+<p><code>yum-utils</code>其实是一个软件包，包含了来自于不同作者的各种实用工具，例如：</p>
+<p>debuginfo-install, find-repos-of-install, needs-restarting, package-cleanup, repoclosure,
+repodiff, repo-graph, repomanage, repoquery, repo-rss, reposync,
+repotrack, show-installed, show-changed-rco, verifytree, yumdownloader,
+yum-builddep, yum-complete-transaction, yum-config-manager, yum-debug-dump,
+yum-debug-restore, yum-groups-manager</p>
+<p>安装<code>yum-utils</code>的方式也很简单：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install yum-utils
+</code></pre></div><h2 id="yum-config-manager">yum-config-manager</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看帮助信息</span>
+yum-config-manage -h
+
+<span style="color:#75715e"># 通过指定的文件或URL添加源</span>
+sudo yum-config-manager --add-repo ADDREPO
+<span style="color:#75715e"># 例如：</span>
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+<span style="color:#75715e"># 上述方法执行后便会将docker-ce.repo文件放入/etc/yum.repos.d/目录下</span>
 </code></pre></div>
 
 <footer class="footline">
@@ -873,6 +909,18 @@ hugo -D
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -881,6 +929,45 @@ hugo -D
                     
                     
 
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -909,54 +996,6 @@ hugo -D
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1042,10 +1081,10 @@ hugo -D
 	 
 	 
 		
-			<a class="nav nav-prev" href="/cmd/hugo/" title="Hugo"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/cmd/linux/01-common/" title="常用命令"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/cmd/linux/" title="Linux" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/cmd/nodejs/" title="Node.Js" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
