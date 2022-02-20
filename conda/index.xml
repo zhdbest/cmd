@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conda on 命令库</title>
+    <link>https://hongmao.run/cmd/conda/</link>
+    <description>Recent content in Conda on 命令库</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 20 Feb 2022 13:57:45 +0800</lastBuildDate><atom:link href="https://hongmao.run/cmd/conda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用命令</title>
+      <link>https://hongmao.run/cmd/conda/01-common/</link>
+      <pubDate>Sun, 20 Feb 2022 13:57:45 +0800</pubDate>
+      
+      <guid>https://hongmao.run/cmd/conda/01-common/</guid>
+      <description># 查看帮助信息 conda -h # 查看create命令的帮助信息 conda create -h # 创建一个环境 conda create --name py39 python=3.9 # 查看所有的环境信息 (base) D:\app\Anaconda&amp;gt;conda info --envs # conda environments: # base * D:\app\Anaconda py39 D:\app\Anaconda\envs\py39 # 由此可以看到前面的&amp;#34;(base)&amp;#34;指的就是当前环境，默认就是base # 切换当前环境到py39 (base) D:\app\Anaconda&amp;gt;conda activate py39 (py39) D:\app\Anaconda&amp;gt; # 可以看到，前面的环境信息已经由&amp;#34;(base)&amp;#34;切换到&amp;#34;(py39)&amp;#34; # 切换回base环境 conda activate base # 或者，也可以这样 conda deactivate # 展示所有确定的配置源 conda config --show-sources # 设置清华大学的仓库镜像 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes # 安装pandas包 conda install pandas # 查看当前环境已安装的包 conda list </description>
+    </item>
+    
+  </channel>
+</rss>

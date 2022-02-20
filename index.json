@@ -1,5 +1,19 @@
 [
 {
+	"uri": "https://hongmao.run/cmd/conda/",
+	"title": "Conda",
+	"tags": [],
+	"description": "本章节主要讲述Conda的相关命令。",
+	"content": "本章节主要讲述Conda的相关命令。\n 常用命令  conda的常用命令\n "
+},
+{
+	"uri": "https://hongmao.run/cmd/conda/01-common/",
+	"title": "常用命令",
+	"tags": [],
+	"description": "conda的常用命令",
+	"content": "# 查看帮助信息 conda -h # 查看create命令的帮助信息 conda create -h # 创建一个环境 conda create --name py39 python=3.9 # 查看所有的环境信息 (base) D:\\app\\Anaconda\u0026gt;conda info --envs # conda environments: # base * D:\\app\\Anaconda py39 D:\\app\\Anaconda\\envs\\py39 # 由此可以看到前面的\u0026#34;(base)\u0026#34;指的就是当前环境，默认就是base # 切换当前环境到py39 (base) D:\\app\\Anaconda\u0026gt;conda activate py39 (py39) D:\\app\\Anaconda\u0026gt; # 可以看到，前面的环境信息已经由\u0026#34;(base)\u0026#34;切换到\u0026#34;(py39)\u0026#34; # 切换回base环境 conda activate base # 或者，也可以这样 conda deactivate # 展示所有确定的配置源 conda config --show-sources # 设置清华大学的仓库镜像 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes # 安装pandas包 conda install pandas # 查看当前环境已安装的包 conda list "
+},
+{
 	"uri": "https://hongmao.run/cmd/homebrew/01-common/",
 	"title": "常用命令",
 	"tags": [],
@@ -130,7 +144,7 @@
 	"title": "命令库",
 	"tags": [],
 	"description": "",
-	"content": "命令库 这儿主要放一些常用的命令。\n Docker  本章节主要讲述Docker的相关命令。\n Git  本章节主要讲述Git的相关命令。\n Homebrew  本章节主要讲述Homebrew的相关命令。\n Hugo  本章节主要讲述Hugo的相关命令。\n Linux  本章节主要讲述Linux的相关命令。\n Node.Js  本章节主要讲述Node.Js的相关命令。\n Redis  本章节主要讲述Redis的相关命令。\n "
+	"content": "命令库 这儿主要放一些常用的命令。\n Conda  本章节主要讲述Conda的相关命令。\n Docker  本章节主要讲述Docker的相关命令。\n Git  本章节主要讲述Git的相关命令。\n Homebrew  本章节主要讲述Homebrew的相关命令。\n Hugo  本章节主要讲述Hugo的相关命令。\n Linux  本章节主要讲述Linux的相关命令。\n Node.Js  本章节主要讲述Node.Js的相关命令。\n Redis  本章节主要讲述Redis的相关命令。\n "
 },
 {
 	"uri": "https://hongmao.run/cmd/categories/",
