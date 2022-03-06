@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.93.1" />
     <meta name="description" content="conda的常用命令">
 <meta name="author" content="hongmao">
 
@@ -12,20 +12,20 @@
     <title>常用命令 :: 命令库</title>
 
     
-    <link href="/cmd/css/nucleus.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/fontawesome-all.min.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/hybrid.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/featherlight.min.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/perfect-scrollbar.min.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/auto-complete.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/atom-one-dark-reasonable.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/theme.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/tabs.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/hugo-theme.css?1645337538" rel="stylesheet">
+    <link href="/cmd/css/nucleus.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/fontawesome-all.min.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/hybrid.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/featherlight.min.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/perfect-scrollbar.min.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/auto-complete.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/atom-one-dark-reasonable.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/theme.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/tabs.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/hugo-theme.css?1646551869" rel="stylesheet">
     
     
 
-    <script src="/cmd/js/jquery-3.3.1.min.js?1645337538"></script>
+    <script src="/cmd/js/jquery-3.3.1.min.js?1646551869"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -34,8 +34,8 @@
       
     </style>
     
-<link href="/cmd/fonts/style.css?1645337538" rel="stylesheet">
-<link href="/cmd/css/my.css?1645337538" rel="stylesheet">
+<link href="/cmd/fonts/style.css?1646551869" rel="stylesheet">
+<link href="/cmd/css/my.css?1646551869" rel="stylesheet">
   </head>
   <body class="" data-url="/cmd/conda/01-common/">
     <nav id="sidebar" class="showVisitedLinks">
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/cmd/js/lunr.min.js?1645337538"></script>
-<script type="text/javascript" src="/cmd/js/auto-complete.js?1645337538"></script>
+<script type="text/javascript" src="/cmd/js/lunr.min.js?1646551869"></script>
+<script type="text/javascript" src="/cmd/js/auto-complete.js?1646551869"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hongmao.run\/cmd\/";
     
 </script>
-<script type="text/javascript" src="/cmd/js/search.js?1645337538"></script>
+<script type="text/javascript" src="/cmd/js/search.js?1646551869"></script>
 
     
   </div>
@@ -730,46 +730,70 @@
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看帮助信息</span>
-conda -h
-<span style="color:#75715e"># 查看create命令的帮助信息</span>
-conda create -h
-
-<span style="color:#75715e"># 创建一个环境</span>
-conda create --name py39 python<span style="color:#f92672">=</span>3.9
-
-<span style="color:#75715e"># 查看所有的环境信息</span>
-<span style="color:#f92672">(</span>base<span style="color:#f92672">)</span> D:<span style="color:#ae81ff">\a</span>pp<span style="color:#ae81ff">\A</span>naconda&gt;conda info --envs
-<span style="color:#75715e"># conda environments:</span>
-<span style="color:#75715e">#</span>
-base                  *  D:<span style="color:#ae81ff">\a</span>pp<span style="color:#ae81ff">\A</span>naconda
-py39                     D:<span style="color:#ae81ff">\a</span>pp<span style="color:#ae81ff">\A</span>naconda<span style="color:#ae81ff">\e</span>nvs<span style="color:#ae81ff">\p</span>y39
-<span style="color:#75715e"># 由此可以看到前面的&#34;(base)&#34;指的就是当前环境，默认就是base</span>
-
-<span style="color:#75715e"># 切换当前环境到py39</span>
-<span style="color:#f92672">(</span>base<span style="color:#f92672">)</span> D:<span style="color:#ae81ff">\a</span>pp<span style="color:#ae81ff">\A</span>naconda&gt;conda activate py39
-<span style="color:#f92672">(</span>py39<span style="color:#f92672">)</span> D:<span style="color:#ae81ff">\a</span>pp<span style="color:#ae81ff">\A</span>naconda&gt;
-<span style="color:#75715e"># 可以看到，前面的环境信息已经由&#34;(base)&#34;切换到&#34;(py39)&#34;</span>
-
-<span style="color:#75715e"># 切换回base环境</span>
-conda activate base
-<span style="color:#75715e"># 或者，也可以这样</span>
-conda deactivate
-
-<span style="color:#75715e"># 展示所有确定的配置源</span>
-conda config --show-sources
-
-<span style="color:#75715e"># 设置清华大学的仓库镜像</span>
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ 
-conda config --set show_channel_urls yes
-
-<span style="color:#75715e"># 安装pandas包</span>
-conda install pandas
-
-<span style="color:#75715e"># 查看当前环境已安装的包</span>
-conda list
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 查看帮助信息</span>
+</span></span><span style="display:flex;"><span>conda -h
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看create命令的帮助信息</span>
+</span></span><span style="display:flex;"><span>conda create -h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看conda版本</span>
+</span></span><span style="display:flex;"><span>conda -V
+</span></span></code></pre></div><h1 id="配置">配置</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 展示所有确定的配置源</span>
+</span></span><span style="display:flex;"><span>conda config --show-sources
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置清华大学的仓库镜像（注意：越往后增加的渠道，其优先级越高）</span>
+</span></span><span style="display:flex;"><span>conda config --add channels &lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/&gt;
+</span></span><span style="display:flex;"><span>conda config --add channels &lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/&gt;
+</span></span><span style="display:flex;"><span>conda config --add channels &lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/&gt;
+</span></span><span style="display:flex;"><span>conda config --set show_channel_urls yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除下载渠道</span>
+</span></span><span style="display:flex;"><span>conda config --remove channels &lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看各下载渠道优先级</span>
+</span></span><span style="display:flex;"><span>conda config --get channels
+</span></span></code></pre></div><h1 id="环境管理">环境管理</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 创建一个环境</span>
+</span></span><span style="display:flex;"><span>conda create --name py39 python<span style="color:#f92672">=</span>3.9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看所有的环境信息</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span> D:<span style="color:#ae81ff">\\</span>app<span style="color:#ae81ff">\\</span>Anaconda&gt;conda info -e
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># conda environments:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span>base                  *  D:<span style="color:#ae81ff">\\</span>app<span style="color:#ae81ff">\\</span>Anaconda
+</span></span><span style="display:flex;"><span>py39                     D:<span style="color:#ae81ff">\\</span>app<span style="color:#ae81ff">\\</span>Anaconda<span style="color:#ae81ff">\\</span>envs<span style="color:#ae81ff">\\</span>py39
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 由此可以看到前面的&#34;(base)&#34;指的就是当前环境，默认就是base</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切换当前环境到py39</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>base<span style="color:#f92672">)</span> D:<span style="color:#ae81ff">\\</span>app<span style="color:#ae81ff">\\</span>Anaconda&gt;conda activate py39
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>py39<span style="color:#f92672">)</span> D:<span style="color:#ae81ff">\\</span>app<span style="color:#ae81ff">\\</span>Anaconda&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 可以看到，前面的环境信息已经由&#34;(base)&#34;切换到&#34;(py39)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切换回base环境</span>
+</span></span><span style="display:flex;"><span>conda activate base
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或者，也可以这样</span>
+</span></span><span style="display:flex;"><span>conda deactivate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除一个已有的环境：py39</span>
+</span></span><span style="display:flex;"><span>conda remove --name py39 --all
+</span></span></code></pre></div><h1 id="包管理">包管理</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 查询包</span>
+</span></span><span style="display:flex;"><span>conda search pandas
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装pandas包</span>
+</span></span><span style="display:flex;"><span>conda install pandas
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在指定的下载渠道&#34;conda-forge&#34;安装fastapi包</span>
+</span></span><span style="display:flex;"><span>conda install -c conda-forge fastapi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看当前环境已安装的包</span>
+</span></span><span style="display:flex;"><span>conda list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 移除pandas包</span>
+</span></span><span style="display:flex;"><span>conda remove pandas
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新conda</span>
+</span></span><span style="display:flex;"><span>conda update conda
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1148,16 +1172,16 @@ conda list
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/cmd/js/clipboard.min.js?1645337538"></script>
-    <script src="/cmd/js/perfect-scrollbar.min.js?1645337538"></script>
-    <script src="/cmd/js/perfect-scrollbar.jquery.min.js?1645337538"></script>
-    <script src="/cmd/js/jquery.sticky.js?1645337538"></script>
-    <script src="/cmd/js/featherlight.min.js?1645337538"></script>
-    <script src="/cmd/js/highlight.pack.js?1645337538"></script>
+    <script src="/cmd/js/clipboard.min.js?1646551869"></script>
+    <script src="/cmd/js/perfect-scrollbar.min.js?1646551869"></script>
+    <script src="/cmd/js/perfect-scrollbar.jquery.min.js?1646551869"></script>
+    <script src="/cmd/js/jquery.sticky.js?1646551869"></script>
+    <script src="/cmd/js/featherlight.min.js?1646551869"></script>
+    <script src="/cmd/js/highlight.pack.js?1646551869"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/cmd/js/modernizr.custom-3.6.0.js?1645337538"></script>
-    <script src="/cmd/js/learn.js?1645337538"></script>
-    <script src="/cmd/js/hugo-learn.js?1645337538"></script>
+    <script src="/cmd/js/modernizr.custom-3.6.0.js?1646551869"></script>
+    <script src="/cmd/js/learn.js?1646551869"></script>
+    <script src="/cmd/js/hugo-learn.js?1646551869"></script>
     
     
 

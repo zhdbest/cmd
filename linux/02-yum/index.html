@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.93.1" />
     <meta name="description" content="yum常用命令">
 <meta name="author" content="hongmao">
 
@@ -12,20 +12,20 @@
     <title>yum :: 命令库</title>
 
     
-    <link href="/cmd/css/nucleus.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/fontawesome-all.min.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/hybrid.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/featherlight.min.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/perfect-scrollbar.min.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/auto-complete.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/atom-one-dark-reasonable.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/theme.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/tabs.css?1645337538" rel="stylesheet">
-    <link href="/cmd/css/hugo-theme.css?1645337538" rel="stylesheet">
+    <link href="/cmd/css/nucleus.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/fontawesome-all.min.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/hybrid.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/featherlight.min.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/perfect-scrollbar.min.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/auto-complete.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/atom-one-dark-reasonable.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/theme.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/tabs.css?1646551869" rel="stylesheet">
+    <link href="/cmd/css/hugo-theme.css?1646551869" rel="stylesheet">
     
     
 
-    <script src="/cmd/js/jquery-3.3.1.min.js?1645337538"></script>
+    <script src="/cmd/js/jquery-3.3.1.min.js?1646551869"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -34,8 +34,8 @@
       
     </style>
     
-<link href="/cmd/fonts/style.css?1645337538" rel="stylesheet">
-<link href="/cmd/css/my.css?1645337538" rel="stylesheet">
+<link href="/cmd/fonts/style.css?1646551869" rel="stylesheet">
+<link href="/cmd/css/my.css?1646551869" rel="stylesheet">
   </head>
   <body class="" data-url="/cmd/linux/02-yum/">
     <nav id="sidebar" class="showVisitedLinks">
@@ -86,14 +86,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/cmd/js/lunr.min.js?1645337538"></script>
-<script type="text/javascript" src="/cmd/js/auto-complete.js?1645337538"></script>
+<script type="text/javascript" src="/cmd/js/lunr.min.js?1646551869"></script>
+<script type="text/javascript" src="/cmd/js/auto-complete.js?1646551869"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hongmao.run\/cmd\/";
     
 </script>
-<script type="text/javascript" src="/cmd/js/search.js?1645337538"></script>
+<script type="text/javascript" src="/cmd/js/search.js?1646551869"></script>
 
     
   </div>
@@ -730,57 +730,57 @@
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看帮助信息</span>
-yum help
-
-<span style="color:#75715e"># 查看已配置的源</span>
-yum repolist
-
-<span style="color:#75715e"># 检查是否有可用的软件包更新</span>
-check-update
-
-<span style="color:#75715e"># 在软件包名及详细信息中搜索指定字符串</span>
-yum search &lt;str&gt;
-<span style="color:#75715e"># 例如：</span>
-yum search nginx
-<span style="color:#75715e"># 若想扩大搜索范围，不止在名称和简介中搜索，可以使用：</span>
-yum search all nginx
-
-<span style="color:#75715e"># 列出所有软件包（会按已安装的和可安装的进行区分）</span>
-yum list
-<span style="color:#75715e"># 列出指定软件包</span>
-yum list &lt;package-name&gt;
-<span style="color:#75715e"># 例如:</span>
-yum list nginx
-<span style="color:#75715e"># 也可以同时查询多个，例如：</span>
-yum list docker nginx
-<span style="color:#75715e"># 列出已安装的软件包</span>
-yum list installed
-<span style="color:#75715e"># 列出已安装的包名包含指定字符串的包</span>
-yum list installed | grep &lt;string&gt;
-<span style="color:#75715e"># 例如：</span>
-yum list installed | grep docker
-
-<span style="color:#75715e"># 查看软件包的详细信息</span>
-yum info &lt;package-name&gt;
-<span style="color:#75715e"># 例如：</span>
-yum info docker
-
-<span style="color:#75715e"># 向系统中安装一个或多个软件包</span>
-yum install &lt;package-1&gt; &lt;package-2&gt;
-<span style="color:#75715e"># 例如：</span>
-sudo yum install docker-ce docker-ce-cli containerd.io
-
-<span style="color:#75715e"># 更新系统中的一个或多个软件包</span>
-sudo yum update
-<span style="color:#75715e"># yum update是更新所有可更新的软件包，如果只想更新nginx，可以使用如下命令</span>
-sudo yum update nginx
-
-<span style="color:#75715e"># 卸载软件包</span>
-sudo yum remove &lt;package-name&gt;
-<span style="color:#75715e"># 例如：</span>
-sudo yum remove docker
-</code></pre></div><h1 id="yum-utils">yum-utils</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看帮助信息</span>
+</span></span><span style="display:flex;"><span>yum help
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看已配置的源</span>
+</span></span><span style="display:flex;"><span>yum repolist
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 检查是否有可用的软件包更新</span>
+</span></span><span style="display:flex;"><span>check-update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在软件包名及详细信息中搜索指定字符串</span>
+</span></span><span style="display:flex;"><span>yum search &lt;str&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
+</span></span><span style="display:flex;"><span>yum search nginx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 若想扩大搜索范围，不止在名称和简介中搜索，可以使用：</span>
+</span></span><span style="display:flex;"><span>yum search all nginx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出所有软件包（会按已安装的和可安装的进行区分）</span>
+</span></span><span style="display:flex;"><span>yum list
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出指定软件包</span>
+</span></span><span style="display:flex;"><span>yum list &lt;package-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如:</span>
+</span></span><span style="display:flex;"><span>yum list nginx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 也可以同时查询多个，例如：</span>
+</span></span><span style="display:flex;"><span>yum list docker nginx
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出已安装的软件包</span>
+</span></span><span style="display:flex;"><span>yum list installed
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 列出已安装的包名包含指定字符串的包</span>
+</span></span><span style="display:flex;"><span>yum list installed | grep &lt;string&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
+</span></span><span style="display:flex;"><span>yum list installed | grep docker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看软件包的详细信息</span>
+</span></span><span style="display:flex;"><span>yum info &lt;package-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
+</span></span><span style="display:flex;"><span>yum info docker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 向系统中安装一个或多个软件包</span>
+</span></span><span style="display:flex;"><span>yum install &lt;package-1&gt; &lt;package-2&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
+</span></span><span style="display:flex;"><span>sudo yum install docker-ce docker-ce-cli containerd.io
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新系统中的一个或多个软件包</span>
+</span></span><span style="display:flex;"><span>sudo yum update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># yum update是更新所有可更新的软件包，如果只想更新nginx，可以使用如下命令</span>
+</span></span><span style="display:flex;"><span>sudo yum update nginx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载软件包</span>
+</span></span><span style="display:flex;"><span>sudo yum remove &lt;package-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
+</span></span><span style="display:flex;"><span>sudo yum remove docker
+</span></span></code></pre></div><h1 id="yum-utils">yum-utils</h1>
 <p><code>yum-utils</code>其实是一个软件包，包含了来自于不同作者的各种实用工具，例如：</p>
 <p>debuginfo-install, find-repos-of-install, needs-restarting, package-cleanup, repoclosure,
 repodiff, repo-graph, repomanage, repoquery, repo-rss, reposync,
@@ -788,17 +788,17 @@ repotrack, show-installed, show-changed-rco, verifytree, yumdownloader,
 yum-builddep, yum-complete-transaction, yum-config-manager, yum-debug-dump,
 yum-debug-restore, yum-groups-manager</p>
 <p>安装<code>yum-utils</code>的方式也很简单：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install yum-utils
-</code></pre></div><h2 id="yum-config-manager">yum-config-manager</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 查看帮助信息</span>
-yum-config-manage -h
-
-<span style="color:#75715e"># 通过指定的文件或URL添加源</span>
-sudo yum-config-manager --add-repo ADDREPO
-<span style="color:#75715e"># 例如：</span>
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-<span style="color:#75715e"># 上述方法执行后便会将docker-ce.repo文件放入/etc/yum.repos.d/目录下</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo yum install yum-utils
+</span></span></code></pre></div><h2 id="yum-config-manager">yum-config-manager</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看帮助信息</span>
+</span></span><span style="display:flex;"><span>yum-config-manage -h
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 通过指定的文件或URL添加源</span>
+</span></span><span style="display:flex;"><span>sudo yum-config-manager --add-repo ADDREPO
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
+</span></span><span style="display:flex;"><span>sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上述方法执行后便会将docker-ce.repo文件放入/etc/yum.repos.d/目录下</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -1183,16 +1183,16 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/cmd/js/clipboard.min.js?1645337538"></script>
-    <script src="/cmd/js/perfect-scrollbar.min.js?1645337538"></script>
-    <script src="/cmd/js/perfect-scrollbar.jquery.min.js?1645337538"></script>
-    <script src="/cmd/js/jquery.sticky.js?1645337538"></script>
-    <script src="/cmd/js/featherlight.min.js?1645337538"></script>
-    <script src="/cmd/js/highlight.pack.js?1645337538"></script>
+    <script src="/cmd/js/clipboard.min.js?1646551869"></script>
+    <script src="/cmd/js/perfect-scrollbar.min.js?1646551869"></script>
+    <script src="/cmd/js/perfect-scrollbar.jquery.min.js?1646551869"></script>
+    <script src="/cmd/js/jquery.sticky.js?1646551869"></script>
+    <script src="/cmd/js/featherlight.min.js?1646551869"></script>
+    <script src="/cmd/js/highlight.pack.js?1646551869"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/cmd/js/modernizr.custom-3.6.0.js?1645337538"></script>
-    <script src="/cmd/js/learn.js?1645337538"></script>
-    <script src="/cmd/js/hugo-learn.js?1645337538"></script>
+    <script src="/cmd/js/modernizr.custom-3.6.0.js?1646551869"></script>
+    <script src="/cmd/js/learn.js?1646551869"></script>
+    <script src="/cmd/js/hugo-learn.js?1646551869"></script>
     
     
 

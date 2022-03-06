@@ -22,7 +22,7 @@
       <pubDate>Sun, 07 Nov 2021 09:41:40 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/linux/02-yum/</guid>
-      <description># 查看帮助信息 yum help # 查看已配置的源 yum repolist # 检查是否有可用的软件包更新 check-update # 在软件包名及详细信息中搜索指定字符串 yum search &amp;lt;str&amp;gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list &amp;lt;package-name&amp;gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep &amp;lt;string&amp;gt; # 例如： yum list installed | grep docker # 查看软件包的详细信息 yum info &amp;lt;package-name&amp;gt; # 例如： yum info docker # 向系统中安装一个或多个软件包 yum install &amp;lt;package-1&amp;gt; &amp;lt;package-2&amp;gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.</description>
+      <description># 查看帮助信息 yum help  # 查看已配置的源 yum repolist  # 检查是否有可用的软件包更新 check-update  # 在软件包名及详细信息中搜索指定字符串 yum search &amp;lt;str&amp;gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx  # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list &amp;lt;package-name&amp;gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep &amp;lt;string&amp;gt; # 例如： yum list installed | grep docker  # 查看软件包的详细信息 yum info &amp;lt;package-name&amp;gt; # 例如： yum info docker  # 向系统中安装一个或多个软件包 yum install &amp;lt;package-1&amp;gt; &amp;lt;package-2&amp;gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.</description>
     </item>
     
   </channel>

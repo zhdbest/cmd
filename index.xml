@@ -13,7 +13,7 @@
       <pubDate>Sun, 20 Feb 2022 13:57:45 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/conda/01-common/</guid>
-      <description># 查看帮助信息 conda -h # 查看create命令的帮助信息 conda create -h # 创建一个环境 conda create --name py39 python=3.9 # 查看所有的环境信息 (base) D:\app\Anaconda&amp;gt;conda info --envs # conda environments: # base * D:\app\Anaconda py39 D:\app\Anaconda\envs\py39 # 由此可以看到前面的&amp;#34;(base)&amp;#34;指的就是当前环境，默认就是base # 切换当前环境到py39 (base) D:\app\Anaconda&amp;gt;conda activate py39 (py39) D:\app\Anaconda&amp;gt; # 可以看到，前面的环境信息已经由&amp;#34;(base)&amp;#34;切换到&amp;#34;(py39)&amp;#34; # 切换回base环境 conda activate base # 或者，也可以这样 conda deactivate # 展示所有确定的配置源 conda config --show-sources # 设置清华大学的仓库镜像 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ conda config --set show_channel_urls yes # 安装pandas包 conda install pandas # 查看当前环境已安装的包 conda list </description>
+      <description># 查看帮助信息 conda -h # 查看create命令的帮助信息 conda create -h  # 查看conda版本 conda -V 配置 # 展示所有确定的配置源 conda config --show-sources  # 设置清华大学的仓库镜像（注意：越往后增加的渠道，其优先级越高） conda config --add channels &amp;lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/&amp;gt; conda config --add channels &amp;lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/&amp;gt; conda config --add channels &amp;lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/&amp;gt; conda config --set show_channel_urls yes  # 删除下载渠道 conda config --remove channels &amp;lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge&amp;gt;  # 查看各下载渠道优先级 conda config --get channels 环境管理 # 创建一个环境 conda create --name py39 python=3.9  # 查看所有的环境信息 (base) D:\\app\\Anaconda&amp;gt;conda info -e # conda environments: # base * D:\\app\\Anaconda py39 D:\\app\\Anaconda\\envs\\py39 # 由此可以看到前面的&amp;#34;(base)&amp;#34;指的就是当前环境，默认就是base  # 切换当前环境到py39 (base) D:\\app\\Anaconda&amp;gt;conda activate py39 (py39) D:\\app\\Anaconda&amp;gt; # 可以看到，前面的环境信息已经由&amp;#34;(base)&amp;#34;切换到&amp;#34;(py39)&amp;#34;  # 切换回base环境 conda activate base # 或者，也可以这样 conda deactivate  # 删除一个已有的环境：py39 conda remove --name py39 --all 包管理 # 查询包 conda search pandas  # 安装pandas包 conda install pandas # 在指定的下载渠道&amp;#34;conda-forge&amp;#34;安装fastapi包 conda install -c conda-forge fastapi  # 查看当前环境已安装的包 conda list  # 移除pandas包 conda remove pandas  # 更新conda conda update conda </description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Sat, 04 Sep 2021 09:05:42 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/homebrew/01-common/</guid>
-      <description># 查看homebrew版本 brew -v # 查看帮助 brew help # 查看某命令的文档 brew help [COMMAND] # 例如： brew help search # 搜索软件包 brew search 文本 # 也可以简写： brew -S 文本 # 例如： brew search openjdk # 或 brew -S openjdk # 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的） brew info 包名 # 例如： brew info python # 安装软件包 brew install 包名 # 例如： brew install python # 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了） brew update # 查看过时的软件包 brew outdated # 升级指定包 brew upgrade 包名 # 例如： brew upgrade python # 升级所有可升级的包 brew upgrade # 卸载指定包 brew uninstall 包名 # 例如： brew uninstall python # 查看本地安装的所有软件包 brew list brew services # 查看使用brew安装的服务 brew services # 启动服务 brew services start 包名 # 例如： brew services start nginx # 停止服务 brew services stop 包名 # 例如： brew services stop nginx # 重启服务 brew services restart 包名 # 例如： brew services restart nginx # 清理已卸载的软件包的服务配置 brew services cleanup </description>
+      <description># 查看homebrew版本 brew -v  # 查看帮助 brew help # 查看某命令的文档 brew help [COMMAND] # 例如： brew help search  # 搜索软件包 brew search 文本 # 也可以简写： brew -S 文本 # 例如： brew search openjdk # 或 brew -S openjdk  # 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的） brew info 包名 # 例如： brew info python  # 安装软件包 brew install 包名 # 例如： brew install python  # 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了） brew update  # 查看过时的软件包 brew outdated  # 升级指定包 brew upgrade 包名 # 例如： brew upgrade python # 升级所有可升级的包 brew upgrade  # 卸载指定包 brew uninstall 包名 # 例如： brew uninstall python  # 查看本地安装的所有软件包 brew list brew services # 查看使用brew安装的服务 brew services  # 启动服务 brew services start 包名 # 例如： brew services start nginx  # 停止服务 brew services stop 包名 # 例如： brew services stop nginx  # 重启服务 brew services restart 包名 # 例如： brew services restart nginx  # 清理已卸载的软件包的服务配置 brew services cleanup </description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Thu, 02 Sep 2021 23:29:20 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/nodejs/01-common/</guid>
-      <description># 查看Node.js版本 node -v # 或 node --version # 查看帮助文档 node -h # 或 node --help </description>
+      <description># 查看Node.js版本 node -v # 或 node --version  # 查看帮助文档 node -h # 或 node --help </description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@
       <pubDate>Thu, 02 Sep 2021 23:29:08 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/hugo/01-common/</guid>
-      <description># 查看Hugo版本 hugo version # 查看帮助文档 hugo help # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site &amp;#34;blog&amp;#34; # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir &amp;#34;myDir&amp;#34; # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D </description>
+      <description># 查看Hugo版本 hugo version  # 查看帮助文档 hugo help  # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site &amp;#34;blog&amp;#34;  # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md  # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir &amp;#34;myDir&amp;#34;  # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name  # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D </description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@
       <pubDate>Thu, 02 Sep 2021 23:28:54 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/docker/01-common/</guid>
-      <description># 查看docker版本 docker version # 如下命令显示有关Docker安装的系统范围信息。显示的信息包括内核版本、容器数量和镜像数量。 docker info # 查看帮助信息 docker help # 查看某具体命令的帮助信息 docker COMMAND --help # 例如： docker run --help # 显示容器资源使用统计信息的实时流 docker stats 使用镜像 # 查询镜像 docker search [OPTIONS] TERM # 例如： docker search tomcat # 拉取镜像 docker pull [OPTIONS] NAME[:TAG|@DIGEST] # 例如，拉取最新版本的tomcat镜像： docker pull tomcat # 拉取指定版本的tomcat镜像： docker pull tomcat:9.0 # 列出所有镜像 docker images 容器管理 # 基于指定镜像运行一个容器（相当于docker create之后再docker start） docker run [OPTIONS] IMAGE [COMMAND] [ARG...] # 例如： docker run --name myTomcat -d -p 8888:8080 tomcat # 运行一个容器时可以指定的选项非常多，例如上面通过“--name myTomcat”指定容器名称为“myTomcat”， # “-d”表示：在后台运行容器并打印容器ID # “-p 8888:8080”表示：将容器的端口（8080）发布到主机（8888），之后访问就使用主机的ip加8888端口访问 # 除此之外，还有如下常用选项： # -a 用于在创建容器时绑定到容器的STDIN、STDOUT或STDERR。这使得可以根据需要操纵输出和输入。 # 例如： docker run --name myStdOut -a stdout ubuntu echo heihei # 然后查看日志，即可看到“heihei” docker logs myStdOut # -e 设置环境变量 docker run -d -e NGINX_ENTRYPOINT_QUIET_LOGS=1 nginx # -i 即使未连接上，也保持标准输入是打开的，常与-t一起使用 # -t 分配一个伪终端 # 例如： docker run -it ubuntu root@c3afdbe94451:/# ls bin boot dev etc home lib media mnt opt proc root run sbin srv sys tmp usr var root@c3afdbe94451:/# exit exit # --link 添加指向另一个容器的链接（目前已过时，可能会在将来的版本中删除） # 建议用用户定义的网络来达成容器间的通信，但是用户定义网络无法解决的问题是在容器间共享变量， # 但是可以通过其他机制如数据卷来实现这一目的。 # -m 内存限制 # --net 将容器连接到网络，假设我们已经通过docker network create创建了名为elastic的网络 docker run -d --name myEs --net elastic -p 9200:9200 -p 9300:9300 -e &amp;#34;discovery.</description>
+      <description># 查看docker版本 docker version # 如下命令显示有关Docker安装的系统范围信息。显示的信息包括内核版本、容器数量和镜像数量。 docker info # 查看帮助信息 docker help # 查看某具体命令的帮助信息 docker COMMAND --help # 例如： docker run --help # 显示容器资源使用统计信息的实时流 docker stats 使用镜像 # 查询镜像 docker search [OPTIONS] TERM # 例如： docker search tomcat  # 拉取镜像 docker pull [OPTIONS] NAME[:TAG|@DIGEST] # 例如，拉取最新版本的tomcat镜像： docker pull tomcat # 拉取指定版本的tomcat镜像： docker pull tomcat:9.0  # 列出所有镜像 docker images 容器管理 # 基于指定镜像运行一个容器（相当于docker create之后再docker start） docker run [OPTIONS] IMAGE [COMMAND] [ARG.</description>
     </item>
     
     <item>
@@ -85,7 +85,7 @@
       <pubDate>Sun, 07 Nov 2021 09:41:40 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/linux/02-yum/</guid>
-      <description># 查看帮助信息 yum help # 查看已配置的源 yum repolist # 检查是否有可用的软件包更新 check-update # 在软件包名及详细信息中搜索指定字符串 yum search &amp;lt;str&amp;gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list &amp;lt;package-name&amp;gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep &amp;lt;string&amp;gt; # 例如： yum list installed | grep docker # 查看软件包的详细信息 yum info &amp;lt;package-name&amp;gt; # 例如： yum info docker # 向系统中安装一个或多个软件包 yum install &amp;lt;package-1&amp;gt; &amp;lt;package-2&amp;gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.</description>
+      <description># 查看帮助信息 yum help  # 查看已配置的源 yum repolist  # 检查是否有可用的软件包更新 check-update  # 在软件包名及详细信息中搜索指定字符串 yum search &amp;lt;str&amp;gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx  # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list &amp;lt;package-name&amp;gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep &amp;lt;string&amp;gt; # 例如： yum list installed | grep docker  # 查看软件包的详细信息 yum info &amp;lt;package-name&amp;gt; # 例如： yum info docker  # 向系统中安装一个或多个软件包 yum install &amp;lt;package-1&amp;gt; &amp;lt;package-2&amp;gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.</description>
     </item>
     
     <item>
@@ -97,8 +97,8 @@
       <description>使用Docker定义和运行多容器应用程序。
 # 查看帮助信息 docker-compose --help # 查看版本信息 docker-compose version docker-compose.yml Compose文件是定义服务、网络和卷的YAML文件。默认路径是./docker-compose.yml。
 使用Docker Compose来编排多个服务，但也可以仅“编排”一个服务，如下展示了仅启动Nginx服务的docker-compose.yml文件：
-version: &amp;#34;3.9&amp;#34; services: myNginx: image: nginx ports: - 8080:80 docker-compose操作 注：docker-compose相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用-f Compose文件来明确指定Compose文件。
-# 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2 # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a # 启动服务的现有容器 docker-compose start [SERVICE.</description>
+version: &amp;#34;3.9&amp;#34; services:  myNginx:  image: nginx  ports:  - 8080:80 docker-compose操作 注：docker-compose相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用-f Compose文件来明确指定Compose文件。
+# 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx  # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q  # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2  # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a  # 启动服务的现有容器 docker-compose start [SERVICE.</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@ version: &amp;#34;3.9&amp;#34; services: myNginx: image: nginx ports: - 8080:80 
       <pubDate>Thu, 02 Sep 2021 23:29:20 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/nodejs/02-npm/</guid>
-      <description># 查看npm版本 npm -v # 查看帮助 npm # 或 npm help # 查看某个命令的帮助信息 npm help 命令 # 例如： npm help install 配置相关 # 查看npm配置信息 npm config ls -l # 查看npm某项配置的值 npm config get registry # 设置npm某项配置的值 npm config set registry https://registry.npm.taobao.org/ 包相关 # 搜索包，如果自己更换成了淘宝的源，则在查询时需指定如下源 npm search 包名 --registry=https://registry.npmjs.org/ # 例如： npm search hexo-cli --registry=https://registry.npmjs.org/ # 当前项目安装指定包 npm install 包名 # 例如： npm install hexo-cli # 如果想全局安装： npm install -g hexo-cli # 查看当前项目安装的包 npm list # 查看全局安装的包 npm list -g # 查看当前项目已安装的指定包的信息 npm list 包名 # 查看全局安装的加上-g，例如：查看全局安装的npm包相关信息 npm list -g npm # 卸载全局安装的指定包 npm uninstall -g 包名 # 例如： npm uninstall -g gitbook-cli # 查看全局安装的待更新的包 npm outdated -g # 更新全局安装的指定包 npm update -g 包名 # 例如： npm update -g npm # 更新所有全局安装的可更新的包 npm update -g </description>
+      <description># 查看npm版本 npm -v  # 查看帮助 npm # 或 npm help # 查看某个命令的帮助信息 npm help 命令 # 例如： npm help install 配置相关 # 查看npm配置信息 npm config ls -l  # 查看npm某项配置的值 npm config get registry  # 设置npm某项配置的值 npm config set registry https://registry.npm.taobao.org/ 包相关 # 搜索包，如果自己更换成了淘宝的源，则在查询时需指定如下源 npm search 包名 --registry=https://registry.npmjs.org/ # 例如： npm search hexo-cli --registry=https://registry.npmjs.org/  # 当前项目安装指定包 npm install 包名 # 例如： npm install hexo-cli # 如果想全局安装： npm install -g hexo-cli  # 查看当前项目安装的包 npm list # 查看全局安装的包 npm list -g  # 查看当前项目已安装的指定包的信息 npm list 包名 # 查看全局安装的加上-g，例如：查看全局安装的npm包相关信息 npm list -g npm  # 卸载全局安装的指定包 npm uninstall -g 包名 # 例如： npm uninstall -g gitbook-cli  # 查看全局安装的待更新的包 npm outdated -g  # 更新全局安装的指定包 npm update -g 包名 # 例如： npm update -g npm  # 更新所有全局安装的可更新的包 npm update -g </description>
     </item>
     
     <item>
