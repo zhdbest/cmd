@@ -4,21 +4,21 @@
 	"title": "Conda",
 	"tags": [],
 	"description": "本章节主要讲述Conda的相关命令。",
-	"content": "本章节主要讲述Conda的相关命令。\n 常用命令  conda的常用命令\n "
+	"content": "本章节主要讲述Conda的相关命令。\n常用命令 conda的常用命令\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/conda/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "conda的常用命令",
-	"content": "# 查看帮助信息 conda -h # 查看create命令的帮助信息 conda create -h  # 查看conda版本 conda -V 配置 # 展示所有确定的配置源 conda config --show-sources  # 设置清华大学的仓库镜像（注意：越往后增加的渠道，其优先级越高） conda config --add channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/\u0026gt; conda config --add channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/\u0026gt; conda config --add channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/\u0026gt; conda config --set show_channel_urls yes  # 删除下载渠道 conda config --remove channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge\u0026gt;  # 查看各下载渠道优先级 conda config --get channels 环境管理 # 创建一个环境 conda create --name py39 python=3.9  # 查看所有的环境信息 (base) D:\\\\app\\\\Anaconda\u0026gt;conda info -e # conda environments: # base * D:\\\\app\\\\Anaconda py39 D:\\\\app\\\\Anaconda\\\\envs\\\\py39 # 由此可以看到前面的\u0026#34;(base)\u0026#34;指的就是当前环境，默认就是base  # 切换当前环境到py39 (base) D:\\\\app\\\\Anaconda\u0026gt;conda activate py39 (py39) D:\\\\app\\\\Anaconda\u0026gt; # 可以看到，前面的环境信息已经由\u0026#34;(base)\u0026#34;切换到\u0026#34;(py39)\u0026#34;  # 切换回base环境 conda activate base # 或者，也可以这样 conda deactivate  # 删除一个已有的环境：py39 conda remove --name py39 --all 包管理 # 查询包 conda search pandas  # 安装pandas包 conda install pandas # 在指定的下载渠道\u0026#34;conda-forge\u0026#34;安装fastapi包 conda install -c conda-forge fastapi  # 查看当前环境已安装的包 conda list  # 移除pandas包 conda remove pandas  # 更新conda conda update conda "
+	"content": "# 查看帮助信息 conda -h # 查看create命令的帮助信息 conda create -h # 查看conda版本 conda -V 配置 # 展示所有确定的配置源 conda config --show-sources # 设置清华大学的仓库镜像（注意：越往后增加的渠道，其优先级越高） conda config --add channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/\u0026gt; conda config --add channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/\u0026gt; conda config --add channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/\u0026gt; conda config --set show_channel_urls yes # 删除下载渠道 conda config --remove channels \u0026lt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge\u0026gt; # 查看各下载渠道优先级 conda config --get channels 环境管理 # 创建一个环境 conda create --name py39 python=3.9 # 查看所有的环境信息 (base) D:\\\\app\\\\Anaconda\u0026gt;conda info -e # conda environments: # base * D:\\\\app\\\\Anaconda py39 D:\\\\app\\\\Anaconda\\\\envs\\\\py39 # 由此可以看到前面的\u0026#34;(base)\u0026#34;指的就是当前环境，默认就是base # 切换当前环境到py39 (base) D:\\\\app\\\\Anaconda\u0026gt;conda activate py39 (py39) D:\\\\app\\\\Anaconda\u0026gt; # 可以看到，前面的环境信息已经由\u0026#34;(base)\u0026#34;切换到\u0026#34;(py39)\u0026#34; # 切换回base环境 conda activate base # 或者，也可以这样 conda deactivate # 删除一个已有的环境：py39 conda remove --name py39 --all 包管理 # 查询包 conda search pandas # 安装pandas包 conda install pandas # 在指定的下载渠道\u0026#34;conda-forge\u0026#34;安装fastapi包 conda install -c conda-forge fastapi # 查看当前环境已安装的包 conda list # 移除pandas包 conda remove pandas # 更新conda conda update conda "
 },
 {
 	"uri": "https://hongmao.run/cmd/homebrew/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Homebrew的常用命令",
-	"content": "# 查看homebrew版本 brew -v  # 查看帮助 brew help # 查看某命令的文档 brew help [COMMAND] # 例如： brew help search  # 搜索软件包 brew search 文本 # 也可以简写： brew -S 文本 # 例如： brew search openjdk # 或 brew -S openjdk  # 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的） brew info 包名 # 例如： brew info python  # 安装软件包 brew install 包名 # 例如： brew install python  # 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了） brew update  # 查看过时的软件包 brew outdated  # 升级指定包 brew upgrade 包名 # 例如： brew upgrade python # 升级所有可升级的包 brew upgrade  # 卸载指定包 brew uninstall 包名 # 例如： brew uninstall python  # 查看本地安装的所有软件包 brew list brew services # 查看使用brew安装的服务 brew services  # 启动服务 brew services start 包名 # 例如： brew services start nginx  # 停止服务 brew services stop 包名 # 例如： brew services stop nginx  # 重启服务 brew services restart 包名 # 例如： brew services restart nginx  # 清理已卸载的软件包的服务配置 brew services cleanup "
+	"content": "# 查看homebrew版本 brew -v # 查看帮助 brew help # 查看某命令的文档 brew help [COMMAND] # 例如： brew help search # 搜索软件包 brew search 文本 # 也可以简写： brew -S 文本 # 例如： brew search openjdk # 或 brew -S openjdk # 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的） brew info 包名 # 例如： brew info python # 安装软件包 brew install 包名 # 例如： brew install python # 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了） brew update # 查看过时的软件包 brew outdated # 升级指定包 brew upgrade 包名 # 例如： brew upgrade python # 升级所有可升级的包 brew upgrade # 卸载指定包 brew uninstall 包名 # 例如： brew uninstall python # 查看本地安装的所有软件包 brew list brew services # 查看使用brew安装的服务 brew services # 启动服务 brew services start 包名 # 例如： brew services start nginx # 停止服务 brew services stop 包名 # 例如： brew services stop nginx # 重启服务 brew services restart 包名 # 例如： brew services restart nginx # 清理已卸载的软件包的服务配置 brew services cleanup "
 },
 {
 	"uri": "https://hongmao.run/cmd/redis/01-common/",
@@ -32,21 +32,21 @@
 	"title": "常用命令",
 	"tags": [],
 	"description": "Node.Js的常用命令",
-	"content": "# 查看Node.js版本 node -v # 或 node --version  # 查看帮助文档 node -h # 或 node --help "
+	"content": "# 查看Node.js版本 node -v # 或 node --version # 查看帮助文档 node -h # 或 node --help "
 },
 {
 	"uri": "https://hongmao.run/cmd/linux/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Linux的常用命令",
-	"content": ""
+	"content": "# 使用scp传输文件 scp 源文件 目标服务器用户名@目标服务器地址:目标文件或目标文件存放的目录 # 例如，将当前目录下的nginx-1.21.6.tar.gz文件传输至192.168.0.201服务器的hongmao用户的家目录下： scp nginx-1.21.6.tar.gz hongmao@192.168.0.201:~/ "
 },
 {
 	"uri": "https://hongmao.run/cmd/hugo/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Hugo的常用命令",
-	"content": "# 查看Hugo版本 hugo version  # 查看帮助文档 hugo help  # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site \u0026#34;blog\u0026#34;  # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md  # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir \u0026#34;myDir\u0026#34;  # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name  # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D "
+	"content": "# 查看Hugo版本 hugo version # 查看帮助文档 hugo help # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site \u0026#34;blog\u0026#34; # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir \u0026#34;myDir\u0026#34; # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D "
 },
 {
 	"uri": "https://hongmao.run/cmd/git/01-common/",
@@ -60,91 +60,112 @@
 	"title": "Docker",
 	"tags": [],
 	"description": "本章节主要讲述Docker的相关命令。",
-	"content": "本章节主要讲述Docker的相关命令。\n 常用命令  Docker的常用命令\n docker-compose  docker-compose的常用命令\n Dockerfile操作  Dockerfile的编写及常用命令\n "
+	"content": "本章节主要讲述Docker的相关命令。\n常用命令 Docker的常用命令\ndocker-compose docker-compose的常用命令\nDockerfile操作 Dockerfile的编写及常用命令\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/docker/01-common/",
 	"title": "常用命令",
 	"tags": [],
 	"description": "Docker的常用命令",
-	"content": "# 查看docker版本 docker version # 如下命令显示有关Docker安装的系统范围信息。显示的信息包括内核版本、容器数量和镜像数量。 docker info # 查看帮助信息 docker help # 查看某具体命令的帮助信息 docker COMMAND --help # 例如： docker run --help # 显示容器资源使用统计信息的实时流 docker stats 使用镜像 # 查询镜像 docker search [OPTIONS] TERM # 例如： docker search tomcat  # 拉取镜像 docker pull [OPTIONS] NAME[:TAG|@DIGEST] # 例如，拉取最新版本的tomcat镜像： docker pull tomcat # 拉取指定版本的tomcat镜像： docker pull tomcat:9.0  # 列出所有镜像 docker images 容器管理 # 基于指定镜像运行一个容器（相当于docker create之后再docker start） docker run [OPTIONS] IMAGE [COMMAND] [ARG...] # 例如： docker run --name myTomcat -d -p 8888:8080 tomcat # 运行一个容器时可以指定的选项非常多，例如上面通过“--name myTomcat”指定容器名称为“myTomcat”， # “-d”表示：在后台运行容器并打印容器ID # “-p 8888:8080”表示：将容器的端口（8080）发布到主机（8888），之后访问就使用主机的ip加8888端口访问 # 除此之外，还有如下常用选项： # -a 用于在创建容器时绑定到容器的STDIN、STDOUT或STDERR。这使得可以根据需要操纵输出和输入。 # 例如： docker run --name myStdOut -a stdout ubuntu echo heihei # 然后查看日志，即可看到“heihei” docker logs myStdOut # -e 设置环境变量 docker run -d -e NGINX_ENTRYPOINT_QUIET_LOGS=1 nginx # -i 即使未连接上，也保持标准输入是打开的，常与-t一起使用 # -t 分配一个伪终端 # 例如： docker run -it ubuntu root@c3afdbe94451:/# ls bin boot dev etc home lib media mnt opt proc root run sbin srv sys tmp usr var root@c3afdbe94451:/# exit exit # --link 添加指向另一个容器的链接（目前已过时，可能会在将来的版本中删除） # 建议用用户定义的网络来达成容器间的通信，但是用户定义网络无法解决的问题是在容器间共享变量， # 但是可以通过其他机制如数据卷来实现这一目的。 # -m 内存限制 # --net 将容器连接到网络，假设我们已经通过docker network create创建了名为elastic的网络 docker run -d --name myEs --net elastic -p 9200:9200 -p 9300:9300 -e \u0026#34;discovery.type=single-node\u0026#34; elasticsearch:7.14.1 # --network 将容器连接到网络（此功能应该与--net一样，只是使用方式略有不同，暂未找到二者差异的官方解释） docker run -d --name myEs --network=elastic -p 9200:9200 -p 9300:9300 -e \u0026#34;discovery.type=single-node\u0026#34; elasticsearch:7.14.1 # --restart\t容器退出时要应用的重新启动策略，默认是no，即docker引擎重启后，不会自动重启该容器 # 设定redis永远自动启动 docker run --restart=always redis # --rm 当容器退出时自动将其移除 docker run -it --rm ubuntu # 上述命令执行后，通过exit命令退出，然后使用docker ps -a查看容器，发现没有该容器 # -v 绑定并挂载卷，如下示例分步骤进行 # 1. 先启动一个tomcat容器 docker run -d --name myTomcat -p 8080:8080 tomcat # 2. 将容器内的tomcat目录复制到主机的当前目录 docker cp f92f91b17878:/usr/local/tomcat ./ # 3. 此时，我们访问8080端口，拿到的是Tomcat的404，原因是webapps内是空的，然后我们将webapps.dist目录下的内容复制到webapps目录下 cp -r webapps.dist/* webapps # 4. 启动一个新tomcat，并将主机上的tomcat目录挂载到容器的/usr/local/tomcat目录 docker run -d --name myTomcat02 -p 8081:8080 -v /Users/hongmao/docker-data/tomcat:/usr/local/tomcat tomcat # 此时，访问8081端口，就可以发现不再是404了，而是我们常见的tomcat首页 # 此处可以理解为：容器内的/usr/local/tomcat目录就是主机上的/Users/hongmao/docker-data/tomcat目录 # 例如，我们现在在主机的tomcat/webapps目录下新建hello/index.html，其内容如下： # \u0026lt;!DOCTYPE html\u0026gt; # \u0026lt;html\u0026gt; # \u0026lt;body\u0026gt;Hello World!\u0026lt;/body\u0026gt; # \u0026lt;/html\u0026gt; # 保存后，访问localhost:8081/hello即可以看到：Hello World! # 容器记录的日志也可以通过主机上的logs目录下的文件实时查看，日志文件是由容器中的服务在容器中写入的 cat logs/localhost_access_log.2021-10-03.txt # 如果想让数据卷内的文件只能在主机上修改，而不能在容器中修改，则可以通过ro来设置，如下： docker run -v /xxx/tomcat/conf:/usr/local/tomcat/conf:ro tomcat # 挂载数据卷时注意如下几点： # 1. 尽量主机和容器的路径都写绝对路径（容器的路径如果非绝对路径会报错，主机的路径如果非绝对路径则会在其他位置创建目录而非你期望的那样） # 2. 指定的主机上的目录如果不存在时会自动创建  # 列出运行中的容器 docker ps # 列出所有容器 docker ps -a  # 查看某个容器的详细信息 docker inspect [OPTIONS] NAME|ID [NAME|ID...] # 例如： docker inspect myTomcat  # 停止一个容器 docker stop [OPTIONS] CONTAINER [CONTAINER...] # 例如，关闭id为aa46d59fb05f的容器： docker stop aa46d59fb05f # 也可以基于名称关闭容器 docker stop myTomcat  # 启动一个（已存在的）容器 docker start [OPTIONS] CONTAINER [CONTAINER...] # 例如，关闭id为aa46d59fb05f的容器： docker start aa46d59fb05f # 也可以基于名称启动容器 docker start myTomcat  # 在正在运行的容器中运行命令 docker exec [OPTIONS] CONTAINER COMMAND [ARG...] # 创建一个运行中容器的bash会话 docker exec -it myTomcat /bin/bash # 在一个运行中的容器中执行命令：ls docker exec -it myTomcat ls  # 查看某容器的端口映射关系 docker port CONTAINER [PRIVATE_PORT[/PROTO]] # 例如，查看名为myTomcat的容器的端口映射关系 docker port myTomcat 8080/tcp -\u0026gt; 0.0.0.0:8080 docker port myTomcat 8080 0.0.0.0:8080  # 修改容器名 docker rename CONTAINER NEW_NAME # 例如： docker rename my_container my_new_container  # 在容器和本地文件系统之间复制文件/文件夹，例如，将id为300ff1e3077b容器内的文件复制到本地文件系统 docker cp 300ff1e3077b:/usr/local/tomcat ./ # 反过来也是可行的，即将本地文件系统的文件复制到容器中 docker cp ./ 300ff1e3077b:/usr/local/tomcat  # 删除一个或多个容器 docker rm [OPTIONS] CONTAINER [CONTAINER...] # 例如：删除id为867c42bf1d7a的容器： docker rm 867c42bf1d7a Docker网络管理 # 列出所有docker网络 docker network ls  # 创建一个网络 docker network create [OPTIONS] NETWORK # 例如： docker network create elastic # 在上述不指定驱动时，默认为bridge，也可以按如下方式指定驱动 docker network create -d bridge my-bridge-network  # 将运行中的容器连接到网络 docker network connect [OPTIONS] NETWORK CONTAINER # 例如： docker network connect my-network container1  # 将容器的网络断开 docker network disconnect [OPTIONS] NETWORK CONTAINER # 例如： docker network disconnect my-network container1  # 查看网络的详细信息 docker network inspect [OPTIONS] NETWORK [NETWORK...] # 例如： docker network inspect bridge  # 删除所有未使用的网络 docker network prune [OPTIONS] # 强制删除未使用的网络，这样不会再询问是否确认删除 docker network prune -f  # 删除指定网络 docker network rm NETWORK [NETWORK...] # 例如： docker network rm my-bridge-net "
+	"content": "# 查看docker版本 docker version # 如下命令显示有关Docker安装的系统范围信息。显示的信息包括内核版本、容器数量和镜像数量。 docker info # 查看帮助信息 docker help # 查看某具体命令的帮助信息 docker COMMAND --help # 例如： docker run --help # 显示容器资源使用统计信息的实时流 docker stats 使用镜像 # 查询镜像 docker search [OPTIONS] TERM # 例如： docker search tomcat # 拉取镜像 docker pull [OPTIONS] NAME[:TAG|@DIGEST] # 例如，拉取最新版本的tomcat镜像： docker pull tomcat # 拉取指定版本的tomcat镜像： docker pull tomcat:9.0 # 列出所有镜像 docker images 容器管理 # 基于指定镜像运行一个容器（相当于docker create之后再docker start） docker run [OPTIONS] IMAGE [COMMAND] [ARG...] # 例如： docker run --name myTomcat -d -p 8888:8080 tomcat # 运行一个容器时可以指定的选项非常多，例如上面通过“--name myTomcat”指定容器名称为“myTomcat”， # “-d”表示：在后台运行容器并打印容器ID # “-p 8888:8080”表示：将容器的端口（8080）发布到主机（8888），之后访问就使用主机的ip加8888端口访问 # 除此之外，还有如下常用选项： # -a 用于在创建容器时绑定到容器的STDIN、STDOUT或STDERR。这使得可以根据需要操纵输出和输入。 # 例如： docker run --name myStdOut -a stdout ubuntu echo heihei # 然后查看日志，即可看到“heihei” docker logs myStdOut # -e 设置环境变量 docker run -d -e NGINX_ENTRYPOINT_QUIET_LOGS=1 nginx # -i 即使未连接上，也保持标准输入是打开的，常与-t一起使用 # -t 分配一个伪终端 # 例如： docker run -it ubuntu root@c3afdbe94451:/# ls bin boot dev etc home lib media mnt opt proc root run sbin srv sys tmp usr var root@c3afdbe94451:/# exit exit # --link 添加指向另一个容器的链接（目前已过时，可能会在将来的版本中删除） # 建议用用户定义的网络来达成容器间的通信，但是用户定义网络无法解决的问题是在容器间共享变量， # 但是可以通过其他机制如数据卷来实现这一目的。 # -m 内存限制 # --net 将容器连接到网络，假设我们已经通过docker network create创建了名为elastic的网络 docker run -d --name myEs --net elastic -p 9200:9200 -p 9300:9300 -e \u0026#34;discovery.type=single-node\u0026#34; elasticsearch:7.14.1 # --network 将容器连接到网络（此功能应该与--net一样，只是使用方式略有不同，暂未找到二者差异的官方解释） docker run -d --name myEs --network=elastic -p 9200:9200 -p 9300:9300 -e \u0026#34;discovery.type=single-node\u0026#34; elasticsearch:7.14.1 # --restart\t容器退出时要应用的重新启动策略，默认是no，即docker引擎重启后，不会自动重启该容器 # 设定redis永远自动启动 docker run --restart=always redis # --rm 当容器退出时自动将其移除 docker run -it --rm ubuntu # 上述命令执行后，通过exit命令退出，然后使用docker ps -a查看容器，发现没有该容器 # -v 绑定并挂载卷，如下示例分步骤进行 # 1. 先启动一个tomcat容器 docker run -d --name myTomcat -p 8080:8080 tomcat # 2. 将容器内的tomcat目录复制到主机的当前目录 docker cp f92f91b17878:/usr/local/tomcat ./ # 3. 此时，我们访问8080端口，拿到的是Tomcat的404，原因是webapps内是空的，然后我们将webapps.dist目录下的内容复制到webapps目录下 cp -r webapps.dist/* webapps # 4. 启动一个新tomcat，并将主机上的tomcat目录挂载到容器的/usr/local/tomcat目录 docker run -d --name myTomcat02 -p 8081:8080 -v /Users/hongmao/docker-data/tomcat:/usr/local/tomcat tomcat # 此时，访问8081端口，就可以发现不再是404了，而是我们常见的tomcat首页 # 此处可以理解为：容器内的/usr/local/tomcat目录就是主机上的/Users/hongmao/docker-data/tomcat目录 # 例如，我们现在在主机的tomcat/webapps目录下新建hello/index.html，其内容如下： # \u0026lt;!DOCTYPE html\u0026gt; # \u0026lt;html\u0026gt; # \u0026lt;body\u0026gt;Hello World!\u0026lt;/body\u0026gt; # \u0026lt;/html\u0026gt; # 保存后，访问localhost:8081/hello即可以看到：Hello World! # 容器记录的日志也可以通过主机上的logs目录下的文件实时查看，日志文件是由容器中的服务在容器中写入的 cat logs/localhost_access_log.2021-10-03.txt # 如果想让数据卷内的文件只能在主机上修改，而不能在容器中修改，则可以通过ro来设置，如下： docker run -v /xxx/tomcat/conf:/usr/local/tomcat/conf:ro tomcat # 挂载数据卷时注意如下几点： # 1. 尽量主机和容器的路径都写绝对路径（容器的路径如果非绝对路径会报错，主机的路径如果非绝对路径则会在其他位置创建目录而非你期望的那样） # 2. 指定的主机上的目录如果不存在时会自动创建 # 列出运行中的容器 docker ps # 列出所有容器 docker ps -a # 查看某个容器的详细信息 docker inspect [OPTIONS] NAME|ID [NAME|ID...] # 例如： docker inspect myTomcat # 停止一个容器 docker stop [OPTIONS] CONTAINER [CONTAINER...] # 例如，关闭id为aa46d59fb05f的容器： docker stop aa46d59fb05f # 也可以基于名称关闭容器 docker stop myTomcat # 启动一个（已存在的）容器 docker start [OPTIONS] CONTAINER [CONTAINER...] # 例如，关闭id为aa46d59fb05f的容器： docker start aa46d59fb05f # 也可以基于名称启动容器 docker start myTomcat # 在正在运行的容器中运行命令 docker exec [OPTIONS] CONTAINER COMMAND [ARG...] # 创建一个运行中容器的bash会话 docker exec -it myTomcat /bin/bash # 在一个运行中的容器中执行命令：ls docker exec -it myTomcat ls # 查看某容器的端口映射关系 docker port CONTAINER [PRIVATE_PORT[/PROTO]] # 例如，查看名为myTomcat的容器的端口映射关系 docker port myTomcat 8080/tcp -\u0026gt; 0.0.0.0:8080 docker port myTomcat 8080 0.0.0.0:8080 # 修改容器名 docker rename CONTAINER NEW_NAME # 例如： docker rename my_container my_new_container # 在容器和本地文件系统之间复制文件/文件夹，例如，将id为300ff1e3077b容器内的文件复制到本地文件系统 docker cp 300ff1e3077b:/usr/local/tomcat ./ # 反过来也是可行的，即将本地文件系统的文件复制到容器中 docker cp ./ 300ff1e3077b:/usr/local/tomcat # 删除一个或多个容器 docker rm [OPTIONS] CONTAINER [CONTAINER...] # 例如：删除id为867c42bf1d7a的容器： docker rm 867c42bf1d7a Docker网络管理 # 列出所有docker网络 docker network ls # 创建一个网络 docker network create [OPTIONS] NETWORK # 例如： docker network create elastic # 在上述不指定驱动时，默认为bridge，也可以按如下方式指定驱动 docker network create -d bridge my-bridge-network # 将运行中的容器连接到网络 docker network connect [OPTIONS] NETWORK CONTAINER # 例如： docker network connect my-network container1 # 将容器的网络断开 docker network disconnect [OPTIONS] NETWORK CONTAINER # 例如： docker network disconnect my-network container1 # 查看网络的详细信息 docker network inspect [OPTIONS] NETWORK [NETWORK...] # 例如： docker network inspect bridge # 删除所有未使用的网络 docker network prune [OPTIONS] # 强制删除未使用的网络，这样不会再询问是否确认删除 docker network prune -f # 删除指定网络 docker network rm NETWORK [NETWORK...] # 例如： docker network rm my-bridge-net "
 },
 {
 	"uri": "https://hongmao.run/cmd/linux/02-yum/",
 	"title": "yum",
 	"tags": [],
 	"description": "yum常用命令",
-	"content": "# 查看帮助信息 yum help  # 查看已配置的源 yum repolist  # 检查是否有可用的软件包更新 check-update  # 在软件包名及详细信息中搜索指定字符串 yum search \u0026lt;str\u0026gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx  # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list \u0026lt;package-name\u0026gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep \u0026lt;string\u0026gt; # 例如： yum list installed | grep docker  # 查看软件包的详细信息 yum info \u0026lt;package-name\u0026gt; # 例如： yum info docker  # 向系统中安装一个或多个软件包 yum install \u0026lt;package-1\u0026gt; \u0026lt;package-2\u0026gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.io  # 更新系统中的一个或多个软件包 sudo yum update # yum update是更新所有可更新的软件包，如果只想更新nginx，可以使用如下命令 sudo yum update nginx  # 卸载软件包 sudo yum remove \u0026lt;package-name\u0026gt; # 例如： sudo yum remove docker yum-utils yum-utils其实是一个软件包，包含了来自于不同作者的各种实用工具，例如：\ndebuginfo-install, find-repos-of-install, needs-restarting, package-cleanup, repoclosure, repodiff, repo-graph, repomanage, repoquery, repo-rss, reposync, repotrack, show-installed, show-changed-rco, verifytree, yumdownloader, yum-builddep, yum-complete-transaction, yum-config-manager, yum-debug-dump, yum-debug-restore, yum-groups-manager\n安装yum-utils的方式也很简单：\nsudo yum install yum-utils yum-config-manager # 查看帮助信息 yum-config-manage -h  # 通过指定的文件或URL添加源 sudo yum-config-manager --add-repo ADDREPO # 例如： sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo # 上述方法执行后便会将docker-ce.repo文件放入/etc/yum.repos.d/目录下 "
+	"content": "# 查看帮助信息 yum help # 查看已配置的源 yum repolist # 检查是否有可用的软件包更新 check-update # 在软件包名及详细信息中搜索指定字符串 yum search \u0026lt;str\u0026gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list \u0026lt;package-name\u0026gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep \u0026lt;string\u0026gt; # 例如： yum list installed | grep docker # 查看软件包的详细信息 yum info \u0026lt;package-name\u0026gt; # 例如： yum info docker # 向系统中安装一个或多个软件包 yum install \u0026lt;package-1\u0026gt; \u0026lt;package-2\u0026gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.io # 更新系统中的一个或多个软件包 sudo yum update # yum update是更新所有可更新的软件包，如果只想更新nginx，可以使用如下命令 sudo yum update nginx # 卸载软件包 sudo yum remove \u0026lt;package-name\u0026gt; # 例如： sudo yum remove docker yum-utils yum-utils其实是一个软件包，包含了来自于不同作者的各种实用工具，例如：\ndebuginfo-install, find-repos-of-install, needs-restarting, package-cleanup, repoclosure, repodiff, repo-graph, repomanage, repoquery, repo-rss, reposync, repotrack, show-installed, show-changed-rco, verifytree, yumdownloader, yum-builddep, yum-complete-transaction, yum-config-manager, yum-debug-dump, yum-debug-restore, yum-groups-manager\n安装yum-utils的方式也很简单：\nsudo yum install yum-utils yum-config-manager # 查看帮助信息 yum-config-manage -h # 通过指定的文件或URL添加源 sudo yum-config-manager --add-repo ADDREPO # 例如： sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo # 上述方法执行后便会将docker-ce.repo文件放入/etc/yum.repos.d/目录下 "
 },
 {
 	"uri": "https://hongmao.run/cmd/docker/02-docker-compose/",
 	"title": "docker-compose",
 	"tags": [],
 	"description": "docker-compose的常用命令",
-	"content": "使用Docker定义和运行多容器应用程序。\n# 查看帮助信息 docker-compose --help # 查看版本信息 docker-compose version docker-compose.yml Compose文件是定义服务、网络和卷的YAML文件。默认路径是./docker-compose.yml。\n使用Docker Compose来编排多个服务，但也可以仅“编排”一个服务，如下展示了仅启动Nginx服务的docker-compose.yml文件：\nversion: \u0026#34;3.9\u0026#34; services:  myNginx:  image: nginx  ports:  - 8080:80 docker-compose操作 注：docker-compose相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用-f Compose文件来明确指定Compose文件。\n# 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx  # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q  # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2  # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a  # 启动服务的现有容器 docker-compose start [SERVICE...] # 启动当前Compose文件下的所有容器： docker-compose start # 启动指定的服务myNginx： docker-compose start myNginx  # 停止运行容器而不删除它们 docker-compose stop [options] [SERVICE...] # 例如，关闭当前Compose下的所有运行中的容器： docker-compose stop # 关闭指定的服务myNginx： docker-compose stop myNginx  # 重新启动所有已停止以及正在运行的服务 docker-compose restart [options] [SERVICE...] # 注意：如果对docker-compose.yml配置进行了更改，运行此命令后并不会反映这些更改。 # 重新启动当前Compose文件下的所有容器： docker-compose restart # 重新启动指定的服务myNginx： docker-compose restart myNginx  # 对服务运行一次性命令。 docker-compose run [options] [-v VOLUME...] [-p PORT...] [-e KEY=VAL...] [-l KEY=VALUE...] SERVICE [COMMAND] [ARGS...] # 常用的选项有： # -d 在后台运行容器 # --name NAME 指定容器名 # -e KEY=VAL 设置环境变量 # --rm 运行后移除容器 # -p 将容器的端口发布到主机，即绑定端口 # -v 绑定装载卷  # 在执行中的容器内执行命令 docker-compose exec [options] [-e KEY=VAL...] SERVICE COMMAND [ARGS...] # 例如，执行ls docker-compose exec myNginx ls # 等同于对该镜像执行： docker exec fcfb5b4add13 ls  # 列出所创建容器使用的镜像 docker-compose images  # 显示服务的日志输出 docker-compose logs  # 暂停正在运行的服务容器 docker-compose pause  # 取消暂停已暂停服务的容器 docker-compose unpause  # 打印端口绑定的公共端口 docker-compose port [options] SERVICE PRIVATE_PORT # 例如： docker-compose port myNginx 80 0.0.0.0:8080  # 删除停止的服务容器 docker-compose rm [options] [SERVICE...] # 例如，删除当前Compose文件下的所有已停止的容器 docker-compose rm # 删除当前Compose文件下指定的已停止的容器 docker-compose rm myNginx  # 显示正在运行的进程 docker-compose top  # 停止容器并删除由docker-compose up创建的容器、网络、卷和镜像。 docker-compose down  参考资料\n Get started with Docker Compose | Docker Documentation Compose file | Docker Documentation Overview of docker-compose CLI | Docker Documentation   "
+	"content": "使用Docker定义和运行多容器应用程序。\n# 查看帮助信息 docker-compose --help # 查看版本信息 docker-compose version docker-compose.yml Compose文件是定义服务、网络和卷的YAML文件。默认路径是./docker-compose.yml。\n使用Docker Compose来编排多个服务，但也可以仅“编排”一个服务，如下展示了仅启动Nginx服务的docker-compose.yml文件：\nversion: \u0026#34;3.9\u0026#34; services: myNginx: image: nginx ports: - 8080:80 docker-compose操作 注：docker-compose相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用-f Compose文件来明确指定Compose文件。\n# 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2 # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a # 启动服务的现有容器 docker-compose start [SERVICE...] # 启动当前Compose文件下的所有容器： docker-compose start # 启动指定的服务myNginx： docker-compose start myNginx # 停止运行容器而不删除它们 docker-compose stop [options] [SERVICE...] # 例如，关闭当前Compose下的所有运行中的容器： docker-compose stop # 关闭指定的服务myNginx： docker-compose stop myNginx # 重新启动所有已停止以及正在运行的服务 docker-compose restart [options] [SERVICE...] # 注意：如果对docker-compose.yml配置进行了更改，运行此命令后并不会反映这些更改。 # 重新启动当前Compose文件下的所有容器： docker-compose restart # 重新启动指定的服务myNginx： docker-compose restart myNginx # 对服务运行一次性命令。 docker-compose run [options] [-v VOLUME...] [-p PORT...] [-e KEY=VAL...] [-l KEY=VALUE...] SERVICE [COMMAND] [ARGS...] # 常用的选项有： # -d 在后台运行容器 # --name NAME 指定容器名 # -e KEY=VAL 设置环境变量 # --rm 运行后移除容器 # -p 将容器的端口发布到主机，即绑定端口 # -v 绑定装载卷 # 在执行中的容器内执行命令 docker-compose exec [options] [-e KEY=VAL...] SERVICE COMMAND [ARGS...] # 例如，执行ls docker-compose exec myNginx ls # 等同于对该镜像执行： docker exec fcfb5b4add13 ls # 列出所创建容器使用的镜像 docker-compose images # 显示服务的日志输出 docker-compose logs # 暂停正在运行的服务容器 docker-compose pause # 取消暂停已暂停服务的容器 docker-compose unpause # 打印端口绑定的公共端口 docker-compose port [options] SERVICE PRIVATE_PORT # 例如： docker-compose port myNginx 80 0.0.0.0:8080 # 删除停止的服务容器 docker-compose rm [options] [SERVICE...] # 例如，删除当前Compose文件下的所有已停止的容器 docker-compose rm # 删除当前Compose文件下指定的已停止的容器 docker-compose rm myNginx # 显示正在运行的进程 docker-compose top # 停止容器并删除由docker-compose up创建的容器、网络、卷和镜像。 docker-compose down 参考资料\nGet started with Docker Compose | Docker Documentation Compose file | Docker Documentation Overview of docker-compose CLI | Docker Documentation "
 },
 {
 	"uri": "https://hongmao.run/cmd/nodejs/02-npm/",
 	"title": "npm",
 	"tags": [],
 	"description": "npm的常用命令",
-	"content": "# 查看npm版本 npm -v  # 查看帮助 npm # 或 npm help # 查看某个命令的帮助信息 npm help 命令 # 例如： npm help install 配置相关 # 查看npm配置信息 npm config ls -l  # 查看npm某项配置的值 npm config get registry  # 设置npm某项配置的值 npm config set registry https://registry.npm.taobao.org/ 包相关 # 搜索包，如果自己更换成了淘宝的源，则在查询时需指定如下源 npm search 包名 --registry=https://registry.npmjs.org/ # 例如： npm search hexo-cli --registry=https://registry.npmjs.org/  # 当前项目安装指定包 npm install 包名 # 例如： npm install hexo-cli # 如果想全局安装： npm install -g hexo-cli  # 查看当前项目安装的包 npm list # 查看全局安装的包 npm list -g  # 查看当前项目已安装的指定包的信息 npm list 包名 # 查看全局安装的加上-g，例如：查看全局安装的npm包相关信息 npm list -g npm  # 卸载全局安装的指定包 npm uninstall -g 包名 # 例如： npm uninstall -g gitbook-cli  # 查看全局安装的待更新的包 npm outdated -g  # 更新全局安装的指定包 npm update -g 包名 # 例如： npm update -g npm  # 更新所有全局安装的可更新的包 npm update -g "
+	"content": "# 查看npm版本 npm -v # 查看帮助 npm # 或 npm help # 查看某个命令的帮助信息 npm help 命令 # 例如： npm help install 配置相关 # 查看npm配置信息 npm config ls -l # 查看npm某项配置的值 npm config get registry # 设置npm某项配置的值 npm config set registry https://registry.npm.taobao.org/ # 取消设置某项配置的值(删除key为registry的配置) npm config delete registry 包相关 # 搜索包，如果自己更换成了淘宝的源，则在查询时需指定如下源 npm search 包名 --registry=https://registry.npmjs.org/ # 例如： npm search hexo-cli --registry=https://registry.npmjs.org/ # 当前项目安装指定包 npm install 包名 # 例如： npm install hexo-cli # 如果想全局安装： npm install -g hexo-cli # 查看当前项目安装的包 npm list # 查看全局安装的包 npm list -g # 查看当前项目已安装的指定包的信息 npm list 包名 # 查看全局安装的加上-g，例如：查看全局安装的npm包相关信息 npm list -g npm # 卸载全局安装的指定包 npm uninstall -g 包名 # 例如： npm uninstall -g gitbook-cli # 查看全局安装的待更新的包 npm outdated -g # 更新全局安装的指定包 npm update -g 包名 # 例如： npm update -g npm # 更新所有全局安装的可更新的包 npm update -g "
 },
 {
 	"uri": "https://hongmao.run/cmd/git/",
 	"title": "Git",
 	"tags": [],
 	"description": "本章节主要讲述Git的相关命令。",
-	"content": "本章节主要讲述Git的相关命令。\n 常用命令  Git的常用命令\n "
+	"content": "本章节主要讲述Git的相关命令。\n常用命令 Git的常用命令\n"
+},
+{
+	"uri": "https://hongmao.run/cmd/linux/03-ps/",
+	"title": "ps",
+	"tags": [],
+	"description": "ps常用命令",
+	"content": "ps是英文“process status”的缩写，顾名思义是显示当前进程的状态。\n# 查看ps版本 ps --version # 查看帮助 ps --help \u0026lt;simple|list|output|threads|misc|all\u0026gt; # 或者 ps --help \u0026lt;s|l|o|t|m|a\u0026gt; # 再或者，更详细的ps文档： man ps # 查看全部进程信息 ps -ef # 或 ps -el # -l 代表长格式，输出内容更多 # 或 ps aux # 注意：不是ps -aux 常用选项 -e：展示所有的进程，等同于-A。\n-f：以完整格式输出，包括命令行（包括参数）。\n列 说明 UID 创建进程的账户，例如：root PID 进程ID PPID 父进程ID C 代表CPU使用率，单位为百分比。 STIME 进程的启动时间。 TTY 登录者的终端位置，若为远程登录则使用动态终端接口名称（pts/n） TIME 此进程实际花费CPU运行的时间。 CMD 创建此进程的命令名（带参数）。 -l：以长格式输出，输出项比-f更多，但又有区别，比如-l就不会展示命令的参数。\n列 说明 F 进程标识，说明此进程的权限。“4”表示此进程的权限为root，“1”表示此子进程仅执行了复制，而并未执行。 S 进程状态，R表示该进程正在运行中，S表示该进程正处在睡眠状态但可以被唤醒，D表示该进程处在不可被唤醒的睡眠状态，通常该线程可能在等待IO，T表示停止状态，Z表示僵尸状态，即进程已经终止但无法被从内存中删除（这样看的话，“僵尸”这个名字还真是贴切） UID 运行该进程的用户ID。 PID 该进程的ID。 PPID 父进程的ID C 代表CPU使用率，单位为百分比。 PRI Priority的缩写，与进程优先级有关。 NI Nice的缩写，与进程优先级有关。 ADDR kernel function，指出该进程在内存的哪个部分。 SZ 代表此进程用掉了多少内存。 WCHAN 标识当前进程是否运行，-表示正在运行。 TTY 登录者的终端位置，若为远程登录则使用动态终端接口名称（pts/n） TIME 此进程实际花费CPU运行的时间。 CMD 创建此进程的命令名（不带参数）。 -u：筛选指定用户创建的进程，例如：筛选“root”创建的进程：ps -u root。 ​\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/docker/03-docker-file/",
 	"title": "Dockerfile操作",
 	"tags": [],
 	"description": "Dockerfile的编写及常用命令",
-	"content": "参考hello-world的Dockerfile写了一个简单的类似的：\nDockerfile：\nFROMubuntuCOPY hello.sh /CMD [\u0026#34;sh\u0026#34;, \u0026#34;/hello.sh\u0026#34;]hello.sh：\necho \u0026#34;Hello, hongmao\u0026#34;  参考资料\n Dockerfile reference | Docker Documentation   "
+	"content": "参考hello-world的Dockerfile写了一个简单的类似的：\nDockerfile：\nFROM ubuntu COPY hello.sh / CMD [\u0026#34;sh\u0026#34;, \u0026#34;/hello.sh\u0026#34;] hello.sh：\necho \u0026#34;Hello, hongmao\u0026#34; 参考资料\nDockerfile reference | Docker Documentation "
 },
 {
 	"uri": "https://hongmao.run/cmd/homebrew/",
 	"title": "Homebrew",
 	"tags": [],
 	"description": "本章节主要讲述Homebrew的相关命令。",
-	"content": "本章节主要讲述Homebrew的相关命令。\n 常用命令  Homebrew的常用命令\n "
+	"content": "本章节主要讲述Homebrew的相关命令。\n常用命令 Homebrew的常用命令\n"
+},
+{
+	"uri": "https://hongmao.run/cmd/linux/04-ls/",
+	"title": "ls",
+	"tags": [],
+	"description": "ls命令详解",
+	"content": "ls是英文“list”的缩写，用于列出指定目录下的内容。\n# 查看ls的帮助信息 ls --help # 或 man ls # 查看ls版本 ls --version # 主要用法 ls [选项] [目录] # 列出所有文件及目录 ls -a # 以全格式输出文件及目录的信息 ls -al # 以更易读的全格式输出文件及目录的信息 ls -ahl # 另：很多Linux发行版中会指定别名 ll -\u0026gt; ls -l 常用选项 -a：此处a是“all”的简写，意为列出所有文件（及目录），包括.开头的隐藏文件（或目录），甚至包括.和..目录。（.代表当前目录，..代表上层目录）\n-A：类似-a，但不列出.和..\n-i：打印出每个文件的索引号。\n-l：以长格式输出结果。输出的列说明如下：\n列 说明 第一列 文件类型及权限信息。类似：drwxr-xr-x，一共10位，第一位是文件类型，d表示类星是目录，l代表软链接文件，-代表常规文件。剩下的9位，每3位一组，分别代表：用户权限、用户组权限、其他用户权限，若读(read)、写(write)、执行(execute)的权限全有，则为rwx，若只有读写权限，则为rw-。 第二列 引用计数，若是文件，则该计数指该文件的硬链接数；若是目录，则该计数该表该目录的一级子目录个数。 第三列 文件或目录的所有者。 第四列 文件或目录所属的组。 第五列 表示文件或目录大小，单位是字节。如果不方便查看，可以加上-h选项，这样该列的输出方式就类似：4.0k这种，而非：4096 第六列 最后修改时间。 第七列 文件名或目录名。 -h：代指“human readable”，以人类更易读的方式进行输出，例如原本输出文件大小是以字节为单位，加上此选项后，将以类似“4k”、“5M”这种格式进行输出。\n-m：用逗号分隔文件。\n-1：输出时一个文件占1行，注意是数字1，而非字母l。\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/hugo/",
 	"title": "Hugo",
 	"tags": [],
 	"description": "本章节主要讲述Hugo的相关命令。",
-	"content": "本章节主要讲述Hugo的相关命令。\n 常用命令  Hugo的常用命令\n "
+	"content": "本章节主要讲述Hugo的相关命令。\n常用命令 Hugo的常用命令\n"
+},
+{
+	"uri": "https://hongmao.run/cmd/linux/05-tar/",
+	"title": "tar",
+	"tags": [],
+	"description": "tar命令详解",
+	"content": "tar命令是英文“tape archive”的缩写，用于打包或还原（解压缩）文件。\n# 查看帮助 tar --help # 查看版本 tar --version # 使用gzip压缩、打包文件，将a.txt、b.txt打包进test.tar.gz tar -czvf test.tar.gz a.txt b.txt # 使用gzip解压缩， tar -zxvf test.tar.gz 常用选项 -c：创建一个新归档，“c”是“create”的缩写。 -f：“f”指“file”的意思，用于指定备份文件，一般该选项应该放在最后，例如：tar -cf a a.txt意为将“a.txt”打包进“a”，而不能是：tar -fc a a.txt。 -v：显示执行过程。 -t：列出备份文件中的内容。 -x：从备份文件中还原文件。 -z：使用gzip指令处理备份文件。 "
 },
 {
 	"uri": "https://hongmao.run/cmd/linux/",
 	"title": "Linux",
 	"tags": [],
 	"description": "本章节主要讲述Linux的相关命令。",
-	"content": "本章节主要讲述Linux的相关命令。\n 常用命令  Linux的常用命令\n yum  yum常用命令\n "
+	"content": "本章节主要讲述Linux的相关命令。\n常用命令 Linux的常用命令\nyum yum常用命令\nps ps常用命令\nls ls命令详解\ntar tar命令详解\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/nodejs/",
 	"title": "Node.Js",
 	"tags": [],
 	"description": "本章节主要讲述Node.Js的相关命令。",
-	"content": "本章节主要讲述NodeJs的相关命令。\n 常用命令  Node.Js的常用命令\n npm  npm的常用命令\n "
+	"content": "本章节主要讲述NodeJs的相关命令。\n常用命令 Node.Js的常用命令\nnpm npm的常用命令\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/redis/",
 	"title": "Redis",
 	"tags": [],
 	"description": "本章节主要讲述Redis的相关命令。",
-	"content": "本章节主要讲述Redis的相关命令。\n 常用命令  Redis的常用命令\n "
+	"content": "本章节主要讲述Redis的相关命令。\n常用命令 Redis的常用命令\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/",
 	"title": "命令库",
 	"tags": [],
 	"description": "",
-	"content": "命令库 这儿主要放一些常用的命令。\n Conda  本章节主要讲述Conda的相关命令。\n Docker  本章节主要讲述Docker的相关命令。\n Git  本章节主要讲述Git的相关命令。\n Homebrew  本章节主要讲述Homebrew的相关命令。\n Hugo  本章节主要讲述Hugo的相关命令。\n Linux  本章节主要讲述Linux的相关命令。\n Node.Js  本章节主要讲述Node.Js的相关命令。\n Redis  本章节主要讲述Redis的相关命令。\n "
+	"content": "命令库 这儿主要放一些常用的命令。\nConda 本章节主要讲述Conda的相关命令。\nDocker 本章节主要讲述Docker的相关命令。\nGit 本章节主要讲述Git的相关命令。\nHomebrew 本章节主要讲述Homebrew的相关命令。\nHugo 本章节主要讲述Hugo的相关命令。\nLinux 本章节主要讲述Linux的相关命令。\nNode.Js 本章节主要讲述Node.Js的相关命令。\nRedis 本章节主要讲述Redis的相关命令。\n"
 },
 {
 	"uri": "https://hongmao.run/cmd/categories/",

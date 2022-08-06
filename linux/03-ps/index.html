@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0" />
-    <meta name="description" content="Homebrew的常用命令">
+    <meta name="description" content="ps常用命令">
 <meta name="author" content="hongmao">
 
     <link rel="icon" href="/cmd/icon/cmd-line.svg" type="image/svg+xml">
 
-    <title>常用命令 :: 命令库</title>
+    <title>ps :: 命令库</title>
 
     
     <link href="/cmd/css/nucleus.css?1659770097" rel="stylesheet">
@@ -37,7 +37,7 @@
 <link href="/cmd/fonts/style.css?1659770097" rel="stylesheet">
 <link href="/cmd/css/my.css?1659770097" rel="stylesheet">
   </head>
-  <body class="" data-url="/cmd/homebrew/01-common/">
+  <body class="" data-url="/cmd/linux/03-ps/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -326,7 +326,7 @@
   
     
     <li data-nav-id="/cmd/homebrew/" title="Homebrew" class="dd-item
-        parent
+        
         
         
         ">
@@ -354,7 +354,7 @@
  
   
     
-      <li data-nav-id="/cmd/homebrew/01-common/" title="常用命令" class="dd-item active">
+      <li data-nav-id="/cmd/homebrew/01-common/" title="常用命令" class="dd-item ">
         <a href="/cmd/homebrew/01-common/">
         <b>1.</b> 常用命令
         <i class="fas fa-check read-icon"></i>
@@ -440,7 +440,7 @@
   
     
     <li data-nav-id="/cmd/linux/" title="Linux" class="dd-item
-        
+        parent
         
         
         ">
@@ -510,7 +510,7 @@
  
   
     
-      <li data-nav-id="/cmd/linux/03-ps/" title="ps" class="dd-item ">
+      <li data-nav-id="/cmd/linux/03-ps/" title="ps" class="dd-item active">
         <a href="/cmd/linux/03-ps/">
         <b>3. </b>ps
         <i class="fas fa-check read-icon"></i>
@@ -764,7 +764,7 @@
             
           
           
-            <a href='/cmd/'>命令库</a> > <a href='/cmd/homebrew/'>Homebrew</a> > 常用命令
+            <a href='/cmd/'>命令库</a> > <a href='/cmd/linux/'>Linux</a> > ps
           
         
           
@@ -786,84 +786,157 @@
           
             <h1>
               
-              常用命令
+              ps
             </h1>
           
 
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看homebrew版本</span>
-</span></span><span style="display:flex;"><span>brew -v
-</span></span><span style="display:flex;"><span>
+<p><code>ps</code>是英文“process status”的缩写，顾名思义是显示当前进程的状态。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看ps版本</span>
+</span></span><span style="display:flex;"><span>ps --version
+</span></span><span style="display:flex;"><span> 
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看帮助</span>
-</span></span><span style="display:flex;"><span>brew help
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看某命令的文档</span>
-</span></span><span style="display:flex;"><span>brew help <span style="color:#f92672">[</span>COMMAND<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew help search
+</span></span><span style="display:flex;"><span>ps --help &lt;simple|list|output|threads|misc|all&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或者</span>
+</span></span><span style="display:flex;"><span>ps --help &lt;s|l|o|t|m|a&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 再或者，更详细的ps文档：</span>
+</span></span><span style="display:flex;"><span>man ps
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 搜索软件包</span>
-</span></span><span style="display:flex;"><span>brew search 文本
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 也可以简写：</span>
-</span></span><span style="display:flex;"><span>brew -S 文本
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew search openjdk 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看全部进程信息</span>
+</span></span><span style="display:flex;"><span>ps -ef
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 或</span>
-</span></span><span style="display:flex;"><span>brew -S openjdk 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的）</span>
-</span></span><span style="display:flex;"><span>brew info 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew info python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装软件包</span>
-</span></span><span style="display:flex;"><span>brew install 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew install python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了）</span>
-</span></span><span style="display:flex;"><span>brew update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看过时的软件包</span>
-</span></span><span style="display:flex;"><span>brew outdated
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 升级指定包</span>
-</span></span><span style="display:flex;"><span>brew upgrade 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew upgrade python
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 升级所有可升级的包</span>
-</span></span><span style="display:flex;"><span>brew upgrade
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载指定包</span>
-</span></span><span style="display:flex;"><span>brew uninstall 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew uninstall python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看本地安装的所有软件包</span>
-</span></span><span style="display:flex;"><span>brew list
-</span></span></code></pre></div><h1 id="brew-services">brew services</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看使用brew安装的服务</span>
-</span></span><span style="display:flex;"><span>brew services
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动服务</span>
-</span></span><span style="display:flex;"><span>brew services start 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew services start nginx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止服务</span>
-</span></span><span style="display:flex;"><span>brew services stop 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew services stop nginx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启服务</span>
-</span></span><span style="display:flex;"><span>brew services restart 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew services restart nginx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 清理已卸载的软件包的服务配置</span>
-</span></span><span style="display:flex;"><span>brew services cleanup
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>ps -el
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -l 代表长格式，输出内容更多</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或</span>
+</span></span><span style="display:flex;"><span>ps aux
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 注意：不是ps -aux</span>
+</span></span></code></pre></div><h1 id="常用选项">常用选项</h1>
+<ul>
+<li>
+<p><code>-e</code>：展示所有的进程，等同于<code>-A</code>。</p>
+</li>
+<li>
+<p><code>-f</code>：以完整格式输出，包括命令行（包括参数）。</p>
+<table>
+<thead>
+<tr>
+<th>列</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UID</td>
+<td>创建进程的账户，例如：root</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>进程ID</td>
+</tr>
+<tr>
+<td>PPID</td>
+<td>父进程ID</td>
+</tr>
+<tr>
+<td>C</td>
+<td>代表CPU使用率，单位为百分比。</td>
+</tr>
+<tr>
+<td>STIME</td>
+<td>进程的启动时间。</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>登录者的终端位置，若为远程登录则使用动态终端接口名称（pts/n）</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>此进程实际花费CPU运行的时间。</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>创建此进程的命令名（带参数）。</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><code>-l</code>：以长格式输出，输出项比<code>-f</code>更多，但又有区别，比如<code>-l</code>就不会展示命令的参数。</p>
+<table>
+<thead>
+<tr>
+<th>列</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F</td>
+<td>进程标识，说明此进程的权限。“4”表示此进程的权限为<code>root</code>，“1”表示此子进程仅执行了复制，而并未执行。</td>
+</tr>
+<tr>
+<td>S</td>
+<td>进程状态，<code>R</code>表示该进程正在运行中，<code>S</code>表示该进程正处在睡眠状态但可以被唤醒，<code>D</code>表示该进程处在不可被唤醒的睡眠状态，通常该线程可能在等待IO，<code>T</code>表示停止状态，<code>Z</code>表示僵尸状态，即进程已经终止但无法被从内存中删除（这样看的话，“僵尸”这个名字还真是贴切）</td>
+</tr>
+<tr>
+<td>UID</td>
+<td>运行该进程的用户ID。</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>该进程的ID。</td>
+</tr>
+<tr>
+<td>PPID</td>
+<td>父进程的ID</td>
+</tr>
+<tr>
+<td>C</td>
+<td>代表CPU使用率，单位为百分比。</td>
+</tr>
+<tr>
+<td>PRI</td>
+<td>Priority的缩写，与进程优先级有关。</td>
+</tr>
+<tr>
+<td>NI</td>
+<td>Nice的缩写，与进程优先级有关。</td>
+</tr>
+<tr>
+<td>ADDR</td>
+<td>kernel function，指出该进程在内存的哪个部分。</td>
+</tr>
+<tr>
+<td>SZ</td>
+<td>代表此进程用掉了多少内存。</td>
+</tr>
+<tr>
+<td>WCHAN</td>
+<td>标识当前进程是否运行，<code>-</code>表示正在运行。</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>登录者的终端位置，若为远程登录则使用动态终端接口名称（pts/n）</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>此进程实际花费CPU运行的时间。</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>创建此进程的命令名（不带参数）。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li><code>-u</code>：筛选指定用户创建的进程，例如：筛选“root”创建的进程：<code>ps -u root</code>。</li>
+</ul>
+<p>​</p>
+
 
 <footer class="footline">
 	
@@ -1031,43 +1104,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1124,10 +1160,30 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1160,6 +1216,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1280,10 +1356,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/cmd/homebrew/" title="Homebrew"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/cmd/linux/02-yum/" title="yum"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/cmd/hugo/" title="Hugo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/cmd/linux/04-ls/" title="ls" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

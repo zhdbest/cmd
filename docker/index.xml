@@ -13,7 +13,7 @@
       <pubDate>Thu, 02 Sep 2021 23:28:54 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/docker/01-common/</guid>
-      <description># 查看docker版本 docker version # 如下命令显示有关Docker安装的系统范围信息。显示的信息包括内核版本、容器数量和镜像数量。 docker info # 查看帮助信息 docker help # 查看某具体命令的帮助信息 docker COMMAND --help # 例如： docker run --help # 显示容器资源使用统计信息的实时流 docker stats 使用镜像 # 查询镜像 docker search [OPTIONS] TERM # 例如： docker search tomcat  # 拉取镜像 docker pull [OPTIONS] NAME[:TAG|@DIGEST] # 例如，拉取最新版本的tomcat镜像： docker pull tomcat # 拉取指定版本的tomcat镜像： docker pull tomcat:9.0  # 列出所有镜像 docker images 容器管理 # 基于指定镜像运行一个容器（相当于docker create之后再docker start） docker run [OPTIONS] IMAGE [COMMAND] [ARG.</description>
+      <description># 查看docker版本 docker version # 如下命令显示有关Docker安装的系统范围信息。显示的信息包括内核版本、容器数量和镜像数量。 docker info # 查看帮助信息 docker help # 查看某具体命令的帮助信息 docker COMMAND --help # 例如： docker run --help # 显示容器资源使用统计信息的实时流 docker stats 使用镜像 # 查询镜像 docker search [OPTIONS] TERM # 例如： docker search tomcat # 拉取镜像 docker pull [OPTIONS] NAME[:TAG|@DIGEST] # 例如，拉取最新版本的tomcat镜像： docker pull tomcat # 拉取指定版本的tomcat镜像： docker pull tomcat:9.0 # 列出所有镜像 docker images 容器管理 # 基于指定镜像运行一个容器（相当于docker create之后再docker start） docker run [OPTIONS] IMAGE [COMMAND] [ARG...] # 例如： docker run --name myTomcat -d -p 8888:8080 tomcat # 运行一个容器时可以指定的选项非常多，例如上面通过“--name myTomcat”指定容器名称为“myTomcat”， # “-d”表示：在后台运行容器并打印容器ID # “-p 8888:8080”表示：将容器的端口（8080）发布到主机（8888），之后访问就使用主机的ip加8888端口访问 # 除此之外，还有如下常用选项： # -a 用于在创建容器时绑定到容器的STDIN、STDOUT或STDERR。这使得可以根据需要操纵输出和输入。 # 例如： docker run --name myStdOut -a stdout ubuntu echo heihei # 然后查看日志，即可看到“heihei” docker logs myStdOut # -e 设置环境变量 docker run -d -e NGINX_ENTRYPOINT_QUIET_LOGS=1 nginx # -i 即使未连接上，也保持标准输入是打开的，常与-t一起使用 # -t 分配一个伪终端 # 例如： docker run -it ubuntu root@c3afdbe94451:/# ls bin boot dev etc home lib media mnt opt proc root run sbin srv sys tmp usr var root@c3afdbe94451:/# exit exit # --link 添加指向另一个容器的链接（目前已过时，可能会在将来的版本中删除） # 建议用用户定义的网络来达成容器间的通信，但是用户定义网络无法解决的问题是在容器间共享变量， # 但是可以通过其他机制如数据卷来实现这一目的。 # -m 内存限制 # --net 将容器连接到网络，假设我们已经通过docker network create创建了名为elastic的网络 docker run -d --name myEs --net elastic -p 9200:9200 -p 9300:9300 -e &amp;#34;discovery.</description>
     </item>
     
     <item>
@@ -25,8 +25,8 @@
       <description>使用Docker定义和运行多容器应用程序。
 # 查看帮助信息 docker-compose --help # 查看版本信息 docker-compose version docker-compose.yml Compose文件是定义服务、网络和卷的YAML文件。默认路径是./docker-compose.yml。
 使用Docker Compose来编排多个服务，但也可以仅“编排”一个服务，如下展示了仅启动Nginx服务的docker-compose.yml文件：
-version: &amp;#34;3.9&amp;#34; services:  myNginx:  image: nginx  ports:  - 8080:80 docker-compose操作 注：docker-compose相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用-f Compose文件来明确指定Compose文件。
-# 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx  # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q  # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2  # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a  # 启动服务的现有容器 docker-compose start [SERVICE.</description>
+version: &amp;#34;3.9&amp;#34; services: myNginx: image: nginx ports: - 8080:80 docker-compose操作 注：docker-compose相关命令如果不在拥有Compose文件的目录下执行时会报错，除非使用-f Compose文件来明确指定Compose文件。
+# 仅拉取镜像，并不创建容器 # 拉取所有服务的镜像 docker-compose pull # 拉取指定服务名的镜像 docker-compose pull myNginx # 校验并查看Compose文件 docker-compose config # 仅校验Compose文件不打印输出 docker-compose config -q # 为服务构建、（重新）创建、启动和附加到容器 docker-compose up [options] [--scale SERVICE=NUM...] [SERVICE...] # 常用参数如下： # -d 在后台运行容器 docker-compose up -d # --force-recreate 即使容器的配置和映像没有更改，也要重新创建容器。 docker-compose up --force-recreate # --no-recreate 如果容器已经存在，请不要重新创建它们。 docker-compose up --no-recreate # --no-start 创建服务后不要启动它们。原命令docker-compose create已废弃改为使用： docker-compose up --no-start # --scale 指定某服务启动几个容器，将覆盖Compose文件中的scale设置 docker-compose up -d --scale myNginx=2 # 查看允许中的容器 docker-compose ps # 查看所有容器 docker-compose ps -a # 启动服务的现有容器 docker-compose start [SERVICE.</description>
     </item>
     
     <item>
@@ -37,9 +37,9 @@ version: &amp;#34;3.9&amp;#34; services:  myNginx:  image: nginx  ports:  - 8080
       <guid>https://hongmao.run/cmd/docker/03-docker-file/</guid>
       <description>参考hello-world的Dockerfile写了一个简单的类似的：
 Dockerfile：
-FROMubuntuCOPY hello.sh /CMD [&amp;#34;sh&amp;#34;, &amp;#34;/hello.sh&amp;#34;]hello.sh：
-echo &amp;#34;Hello, hongmao&amp;#34;  参考资料
- Dockerfile reference | Docker Documentation   </description>
+FROM ubuntu COPY hello.sh / CMD [&amp;#34;sh&amp;#34;, &amp;#34;/hello.sh&amp;#34;] hello.sh：
+echo &amp;#34;Hello, hongmao&amp;#34; 参考资料
+Dockerfile reference | Docker Documentation </description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
       <pubDate>Thu, 02 Sep 2021 23:29:08 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/hugo/01-common/</guid>
-      <description># 查看Hugo版本 hugo version  # 查看帮助文档 hugo help  # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site &amp;#34;blog&amp;#34;  # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md  # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir &amp;#34;myDir&amp;#34;  # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name  # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D </description>
+      <description># 查看Hugo版本 hugo version # 查看帮助文档 hugo help # 创建一个Hugo站点项目 hugo new site 项目名 # 例如： hugo new site &amp;#34;blog&amp;#34; # 创建一篇文章，默认路径是在项目根目录的content目录下 hugo new 文章路径及文章名 # 例如：在content目录下的posts目录下创建文章“first.md” hugo new posts/first.md # 依据模板创建文章或目录 hugo new --kind 模板名 文章路径及文章名 # 假设在archetypes目录下定义了名为“dir”的模板，则可以使用此模板创建文件： hugo new --kind dir &amp;#34;myDir&amp;#34; # 启动本地服务 hugo server # 启动本地服务（包括状态为“草稿”的文章） hugo server -D # 指定主题启动 hugo server theme=your_theme_name # 生成静态资源文件 hugo # 生成静态资源文件（包括状态为“草稿”的文章） hugo -D </description>
     </item>
     
   </channel>

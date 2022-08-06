@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.101.0" />
-    <meta name="description" content="Homebrew的常用命令">
+    <meta name="description" content="tar命令详解">
 <meta name="author" content="hongmao">
 
     <link rel="icon" href="/cmd/icon/cmd-line.svg" type="image/svg+xml">
 
-    <title>常用命令 :: 命令库</title>
+    <title>tar :: 命令库</title>
 
     
     <link href="/cmd/css/nucleus.css?1659770097" rel="stylesheet">
@@ -37,7 +37,7 @@
 <link href="/cmd/fonts/style.css?1659770097" rel="stylesheet">
 <link href="/cmd/css/my.css?1659770097" rel="stylesheet">
   </head>
-  <body class="" data-url="/cmd/homebrew/01-common/">
+  <body class="" data-url="/cmd/linux/05-tar/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -326,7 +326,7 @@
   
     
     <li data-nav-id="/cmd/homebrew/" title="Homebrew" class="dd-item
-        parent
+        
         
         
         ">
@@ -354,7 +354,7 @@
  
   
     
-      <li data-nav-id="/cmd/homebrew/01-common/" title="常用命令" class="dd-item active">
+      <li data-nav-id="/cmd/homebrew/01-common/" title="常用命令" class="dd-item ">
         <a href="/cmd/homebrew/01-common/">
         <b>1.</b> 常用命令
         <i class="fas fa-check read-icon"></i>
@@ -440,7 +440,7 @@
   
     
     <li data-nav-id="/cmd/linux/" title="Linux" class="dd-item
-        
+        parent
         
         
         ">
@@ -552,7 +552,7 @@
  
   
     
-      <li data-nav-id="/cmd/linux/05-tar/" title="tar" class="dd-item ">
+      <li data-nav-id="/cmd/linux/05-tar/" title="tar" class="dd-item active">
         <a href="/cmd/linux/05-tar/">
         <b>5. </b>tar
         <i class="fas fa-check read-icon"></i>
@@ -764,7 +764,7 @@
             
           
           
-            <a href='/cmd/'>命令库</a> > <a href='/cmd/homebrew/'>Homebrew</a> > 常用命令
+            <a href='/cmd/'>命令库</a> > <a href='/cmd/linux/'>Linux</a> > tar
           
         
           
@@ -786,84 +786,35 @@
           
             <h1>
               
-              常用命令
+              tar
             </h1>
           
 
         
 
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看homebrew版本</span>
-</span></span><span style="display:flex;"><span>brew -v
+<p><code>tar</code>命令是英文“tape archive”的缩写，用于打包或还原（解压缩）文件。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看帮助</span>
+</span></span><span style="display:flex;"><span>tar --help
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看帮助</span>
-</span></span><span style="display:flex;"><span>brew help
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看某命令的文档</span>
-</span></span><span style="display:flex;"><span>brew help <span style="color:#f92672">[</span>COMMAND<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew help search
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看版本</span>
+</span></span><span style="display:flex;"><span>tar --version
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 搜索软件包</span>
-</span></span><span style="display:flex;"><span>brew search 文本
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 也可以简写：</span>
-</span></span><span style="display:flex;"><span>brew -S 文本
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew search openjdk 
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或</span>
-</span></span><span style="display:flex;"><span>brew -S openjdk 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用gzip压缩、打包文件，将a.txt、b.txt打包进test.tar.gz</span>
+</span></span><span style="display:flex;"><span>tar -czvf test.tar.gz a.txt b.txt
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看指定软件包的具体信息（可以是已安装的，也可以是未安装的）</span>
-</span></span><span style="display:flex;"><span>brew info 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew info python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装软件包</span>
-</span></span><span style="display:flex;"><span>brew install 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew install python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新库（并不是更新所有本地已安装的软件包，执行完此命令后，就可以看到哪些包可以升级了）</span>
-</span></span><span style="display:flex;"><span>brew update
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看过时的软件包</span>
-</span></span><span style="display:flex;"><span>brew outdated
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 升级指定包</span>
-</span></span><span style="display:flex;"><span>brew upgrade 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew upgrade python
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 升级所有可升级的包</span>
-</span></span><span style="display:flex;"><span>brew upgrade
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载指定包</span>
-</span></span><span style="display:flex;"><span>brew uninstall 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew uninstall python
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看本地安装的所有软件包</span>
-</span></span><span style="display:flex;"><span>brew list
-</span></span></code></pre></div><h1 id="brew-services">brew services</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查看使用brew安装的服务</span>
-</span></span><span style="display:flex;"><span>brew services
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动服务</span>
-</span></span><span style="display:flex;"><span>brew services start 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew services start nginx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止服务</span>
-</span></span><span style="display:flex;"><span>brew services stop 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew services stop nginx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启服务</span>
-</span></span><span style="display:flex;"><span>brew services restart 包名
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如：</span>
-</span></span><span style="display:flex;"><span>brew services restart nginx
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 清理已卸载的软件包的服务配置</span>
-</span></span><span style="display:flex;"><span>brew services cleanup
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用gzip解压缩，</span>
+</span></span><span style="display:flex;"><span>tar -zxvf test.tar.gz
+</span></span></code></pre></div><h1 id="常用选项">常用选项</h1>
+<ul>
+<li><code>-c</code>：创建一个新归档，“c”是“create”的缩写。</li>
+<li><code>-f</code>：“f”指“file”的意思，用于指定备份文件，一般该选项应该放在最后，例如：<code>tar -cf a a.txt</code>意为将“a.txt”打包进“a”，而不能是：<code>tar -fc a a.txt</code>。</li>
+<li><code>-v</code>：显示执行过程。</li>
+<li><code>-t</code>：列出备份文件中的内容。</li>
+<li><code>-x</code>：从备份文件中还原文件。</li>
+<li><code>-z</code>：使用gzip指令处理备份文件。</li>
+</ul>
+
 
 <footer class="footline">
 	
@@ -1031,43 +982,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1124,10 +1038,30 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1188,6 +1122,23 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1195,6 +1146,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1280,10 +1234,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/cmd/homebrew/" title="Homebrew"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/cmd/linux/04-ls/" title="ls"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/cmd/hugo/" title="Hugo" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/cmd/nodejs/" title="Node.Js" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

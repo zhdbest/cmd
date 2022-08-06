@@ -13,7 +13,7 @@
       <pubDate>Thu, 02 Sep 2021 23:29:13 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/linux/01-common/</guid>
-      <description></description>
+      <description># 使用scp传输文件 scp 源文件 目标服务器用户名@目标服务器地址:目标文件或目标文件存放的目录 # 例如，将当前目录下的nginx-1.21.6.tar.gz文件传输至192.168.0.201服务器的hongmao用户的家目录下： scp nginx-1.21.6.tar.gz hongmao@192.168.0.201:~/ </description>
     </item>
     
     <item>
@@ -22,7 +22,46 @@
       <pubDate>Sun, 07 Nov 2021 09:41:40 +0800</pubDate>
       
       <guid>https://hongmao.run/cmd/linux/02-yum/</guid>
-      <description># 查看帮助信息 yum help  # 查看已配置的源 yum repolist  # 检查是否有可用的软件包更新 check-update  # 在软件包名及详细信息中搜索指定字符串 yum search &amp;lt;str&amp;gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx  # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list &amp;lt;package-name&amp;gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep &amp;lt;string&amp;gt; # 例如： yum list installed | grep docker  # 查看软件包的详细信息 yum info &amp;lt;package-name&amp;gt; # 例如： yum info docker  # 向系统中安装一个或多个软件包 yum install &amp;lt;package-1&amp;gt; &amp;lt;package-2&amp;gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.</description>
+      <description># 查看帮助信息 yum help # 查看已配置的源 yum repolist # 检查是否有可用的软件包更新 check-update # 在软件包名及详细信息中搜索指定字符串 yum search &amp;lt;str&amp;gt; # 例如： yum search nginx # 若想扩大搜索范围，不止在名称和简介中搜索，可以使用： yum search all nginx # 列出所有软件包（会按已安装的和可安装的进行区分） yum list # 列出指定软件包 yum list &amp;lt;package-name&amp;gt; # 例如: yum list nginx # 也可以同时查询多个，例如： yum list docker nginx # 列出已安装的软件包 yum list installed # 列出已安装的包名包含指定字符串的包 yum list installed | grep &amp;lt;string&amp;gt; # 例如： yum list installed | grep docker # 查看软件包的详细信息 yum info &amp;lt;package-name&amp;gt; # 例如： yum info docker # 向系统中安装一个或多个软件包 yum install &amp;lt;package-1&amp;gt; &amp;lt;package-2&amp;gt; # 例如： sudo yum install docker-ce docker-ce-cli containerd.</description>
+    </item>
+    
+    <item>
+      <title>ps</title>
+      <link>https://hongmao.run/cmd/linux/03-ps/</link>
+      <pubDate>Mon, 25 Jul 2022 18:20:27 +0800</pubDate>
+      
+      <guid>https://hongmao.run/cmd/linux/03-ps/</guid>
+      <description>ps是英文“process status”的缩写，顾名思义是显示当前进程的状态。
+# 查看ps版本 ps --version # 查看帮助 ps --help &amp;lt;simple|list|output|threads|misc|all&amp;gt; # 或者 ps --help &amp;lt;s|l|o|t|m|a&amp;gt; # 再或者，更详细的ps文档： man ps # 查看全部进程信息 ps -ef # 或 ps -el # -l 代表长格式，输出内容更多 # 或 ps aux # 注意：不是ps -aux 常用选项 -e：展示所有的进程，等同于-A。
+-f：以完整格式输出，包括命令行（包括参数）。
+列 说明 UID 创建进程的账户，例如：root PID 进程ID PPID 父进程ID C 代表CPU使用率，单位为百分比。 STIME 进程的启动时间。 TTY 登录者的终端位置，若为远程登录则使用动态终端接口名称（pts/n） TIME 此进程实际花费CPU运行的时间。 CMD 创建此进程的命令名（带参数）。 -l：以长格式输出，输出项比-f更多，但又有区别，比如-l就不会展示命令的参数。
+列 说明 F 进程标识，说明此进程的权限。“4”表示此进程的权限为root，“1”表示此子进程仅执行了复制，而并未执行。 S 进程状态，R表示该进程正在运行中，S表示该进程正处在睡眠状态但可以被唤醒，D表示该进程处在不可被唤醒的睡眠状态，通常该线程可能在等待IO，T表示停止状态，Z表示僵尸状态，即进程已经终止但无法被从内存中删除（这样看的话，“僵尸”这个名字还真是贴切） UID 运行该进程的用户ID。 PID 该进程的ID。 PPID 父进程的ID C 代表CPU使用率，单位为百分比。 PRI Priority的缩写，与进程优先级有关。 NI Nice的缩写，与进程优先级有关。 ADDR kernel function，指出该进程在内存的哪个部分。 SZ 代表此进程用掉了多少内存。 WCHAN 标识当前进程是否运行，-表示正在运行。 TTY 登录者的终端位置，若为远程登录则使用动态终端接口名称（pts/n） TIME 此进程实际花费CPU运行的时间。 CMD 创建此进程的命令名（不带参数）。 -u：筛选指定用户创建的进程，例如：筛选“root”创建的进程：ps -u root。 ​</description>
+    </item>
+    
+    <item>
+      <title>ls</title>
+      <link>https://hongmao.run/cmd/linux/04-ls/</link>
+      <pubDate>Sat, 06 Aug 2022 11:51:21 +0800</pubDate>
+      
+      <guid>https://hongmao.run/cmd/linux/04-ls/</guid>
+      <description>ls是英文“list”的缩写，用于列出指定目录下的内容。
+# 查看ls的帮助信息 ls --help # 或 man ls # 查看ls版本 ls --version # 主要用法 ls [选项] [目录] # 列出所有文件及目录 ls -a # 以全格式输出文件及目录的信息 ls -al # 以更易读的全格式输出文件及目录的信息 ls -ahl # 另：很多Linux发行版中会指定别名 ll -&amp;gt; ls -l 常用选项 -a：此处a是“all”的简写，意为列出所有文件（及目录），包括.开头的隐藏文件（或目录），甚至包括.和..目录。（.代表当前目录，..代表上层目录）
+-A：类似-a，但不列出.和..
+-i：打印出每个文件的索引号。
+-l：以长格式输出结果。输出的列说明如下：
+列 说明 第一列 文件类型及权限信息。类似：drwxr-xr-x，一共10位，第一位是文件类型，d表示类星是目录，l代表软链接文件，-代表常规文件。剩下的9位，每3位一组，分别代表：用户权限、用户组权限、其他用户权限，若读(read)、写(write)、执行(execute)的权限全有，则为rwx，若只有读写权限，则为rw-。 第二列 引用计数，若是文件，则该计数指该文件的硬链接数；若是目录，则该计数该表该目录的一级子目录个数。 第三列 文件或目录的所有者。 第四列 文件或目录所属的组。 第五列 表示文件或目录大小，单位是字节。如果不方便查看，可以加上-h选项，这样该列的输出方式就类似：4.0k这种，而非：4096 第六列 最后修改时间。 第七列 文件名或目录名。 -h：代指“human readable”，以人类更易读的方式进行输出，例如原本输出文件大小是以字节为单位，加上此选项后，将以类似“4k”、“5M”这种格式进行输出。
+-m：用逗号分隔文件。
+-1：输出时一个文件占1行，注意是数字1，而非字母l。</description>
+    </item>
+    
+    <item>
+      <title>tar</title>
+      <link>https://hongmao.run/cmd/linux/05-tar/</link>
+      <pubDate>Sat, 06 Aug 2022 11:51:28 +0800</pubDate>
+      
+      <guid>https://hongmao.run/cmd/linux/05-tar/</guid>
+      <description>tar命令是英文“tape archive”的缩写，用于打包或还原（解压缩）文件。
+# 查看帮助 tar --help # 查看版本 tar --version # 使用gzip压缩、打包文件，将a.txt、b.txt打包进test.tar.gz tar -czvf test.tar.gz a.txt b.txt # 使用gzip解压缩， tar -zxvf test.tar.gz 常用选项 -c：创建一个新归档，“c”是“create”的缩写。 -f：“f”指“file”的意思，用于指定备份文件，一般该选项应该放在最后，例如：tar -cf a a.txt意为将“a.txt”打包进“a”，而不能是：tar -fc a a.txt。 -v：显示执行过程。 -t：列出备份文件中的内容。 -x：从备份文件中还原文件。 -z：使用gzip指令处理备份文件。 </description>
     </item>
     
   </channel>
